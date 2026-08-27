@@ -39,7 +39,8 @@ jobs:
 
       - name: Fetch POE2 Scout reward snapshot
         env:
-          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || '' }}
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'current' }}
+          SCOUT_REFERENCE_CURRENCIES: "exalted,divine"
           SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'P2Exchange-POE2ScoutRewardSnapshot/1.0 (github-actions)' }}
           SCOUT_TIMEOUT: "30"
           SCOUT_RETRIES: "4"
@@ -57,25 +58,55 @@ jobs:
 
           stats = data["stats"]
           print("league=", data["league"])
-          print("reference_currency=", data["reference_currency"])
+          print("reference_currencies=", data["reference_currencies"])
           print("priced=", stats["priced"])
           print("unpriced=", stats["unpriced"])
 
           if data["source"] != "poe2scout":
               raise SystemExit("Unexpected source")
-          if data["reference_currency"] != "exalted":
-              raise SystemExit("Unexpected reference currency")
+          if data["reference_currencies"] != ["exalted", "divine"]:
+              raise SystemExit("Unexpected reference currencies")
           if stats["requested"] == 0:
               raise SystemExit("No rewards requested")
           if stats["priced"] == 0:
               raise SystemExit("No rewards were priced")
+          if not any(row.get("price_exalted") is not None for row in data["rewards"]):
+              raise SystemExit("No rewards have Exalted prices")
+          if not any(row.get("price_divine") is not None for row in data["rewards"]):
+              raise SystemExit("No rewards have Divine prices")
+          PY
+
+      - name: Build compact currency data
+        run: python3 scripts/build_currency_json.py --input data/current.json --output data/currency.json
+
+      - name: Validate compact currency data
+        run: |
+          test -s data/currency.json
+          python3 -m json.tool data/currency.json >/dev/null
+          python3 - <<'PY'
+          import json
+
+          with open("data/currency.json", encoding="utf-8") as handle:
+              data = json.load(handle)
+
+          if list(data) != ["rewards"]:
+              raise SystemExit("currency.json must only contain the rewards array")
+
+          rewards = data["rewards"]
+          if not isinstance(rewards, list) or not rewards:
+              raise SystemExit("currency.json rewards must be a non-empty array")
+
+          allowed = {"name", "matched_api_id", "price_exalted", "price_divine"}
+          for index, reward in enumerate(rewards):
+              if set(reward) != allowed:
+                  raise SystemExit(f"Unexpected fields in currency reward #{index}: {sorted(reward)}")
           PY
 
       - name: Commit snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/current.json
+          git add data/current.json data/currency.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
