@@ -25,7 +25,7 @@ jobs:
       - name: Fetch Scout snapshot
         env:
           SCOUT_REALM: ${{ vars.SCOUT_REALM || 'poe2' }}
-          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE }}
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'Runes of Aldur' }}
           SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'POE2-Expedition-Radar-CurrencySnapshot/1.0' }}
           SNAPSHOT_RETENTION_DAYS: ${{ vars.SNAPSHOT_RETENTION_DAYS || '30' }}
         run: python scripts/fetch_snapshot.py
