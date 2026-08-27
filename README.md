@@ -1,32 +1,26 @@
-# POE2 Expedition Reward Snapshot
+# POE2 Expedition / Runeshape Reward Price Snapshot
 
-Hourly GitHub Action for a compact Runeshape reward price feed.
+This version does **not** call the legacy POE2 Scout `/poe2/Leagues/.../Currencies/...` route.
+That route currently returns HTTP 400 for `divine-orb` on the public API.
 
-## Sources
+The hourly job uses the documented public **poe.ninja PoE2 economy exchange overview**:
 
-- POE2DB Runeshape Combinations: https://poe2db.tw/Runeshape_Combinations
-- RuneshapePriceChecker: https://github.com/Barragek0/RuneshapePriceChecker
-- POE2 Scout API: https://api.poe2scout.com/swagger
+- `Currency`
+- `Runes`
+- `UncutGems`
 
-The current Runeshape dataset is 321 combinations and is grouped by PoE2DB into 92 Currency, 131 Runes, 14 Alloys, 61 Gems and 23 generic Unique reward buckets. Generic Unique buckets are deliberately excluded because the reward is not a deterministic unique item.
+The Runeshape reward catalog is filtered locally, so the committed snapshot contains only the rewards in `data/rewards.json`, not the full economy payload.
 
-## Runtime flow
+Prices are normalized to both Exalted and Divine using the Exalted/Divine anchor lines from the same `Currency` snapshot. No hard-coded EX/DIV rate is used.
 
-1. `build_rewards.py` refreshes the compact catalog from the Runeshape page.
-2. `resolve_reward_ids.py` resolves Scout identifiers for non-currency items and stores them in `data/rewards.json`.
-3. `fetch_snapshot.py` fetches Divine once and then one price endpoint per reward.
-4. Reward price is normalized to Exalted and converted to Divine with:
+## Run
 
-   `price_divine = price_exalted / divine_price_exalted`
+```bash
+python scripts/fetch_snapshot.py
+```
 
-The hourly snapshot never downloads the full Scout economy table.
+Set `NINJA_LEAGUE` (or the GitHub Actions variable `NINJA_LEAGUE`) to the exact league display name.
 
-## Important
+## Why 171 rewards were unresolved before
 
-The Scout API exposes both currency and item endpoints in its current Swagger:
-- `/Currencies/{apiId}`
-- `/Items/{itemId}`
-
-The public RuneshapePriceChecker project also documents that POE2 Scout supplies currency, expedition, rune, verisium, uncut gem and unique pricing.
-
-If Scout changes the aggregate `/Items` search contract, only `resolve_reward_ids.py` needs adjustment; the hourly snapshot remains per-item.
+The old pipeline tried to resolve Rune/Alloy/Gem names through POE2 Scout `/Items` and then fetched Scout `/Currencies/{apiId}` for Divine. Those are not the right pricing path for this reward pool. The poe.ninja exchange API explicitly exposes `Runes`, `UncutGems`, and other PoE2 economy categories, so the new pipeline fetches each category once and performs exact local name matching.
