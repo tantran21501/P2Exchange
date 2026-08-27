@@ -1,0 +1,78 @@
+name: POE2 Scout Reward Price Snapshot
+
+on:
+  schedule:
+    - cron: '5 * * * *'
+  workflow_dispatch:
+    inputs:
+      league:
+        description: 'Exact POE2 Scout league name'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: poe2-scout-reward-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Refresh reward catalog
+        env:
+          SCOUT_REALM: ${{ vars.SCOUT_REALM || 'poe2' }}
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'Runes of Aldur' }}
+          SCOUT_API_BASE: ${{ vars.SCOUT_API_BASE || 'https://api.poe2scout.com' }}
+        run: python scripts/build_rewards.py
+
+      - name: Resolve Scout reward IDs
+        env:
+          SCOUT_REALM: ${{ vars.SCOUT_REALM || 'poe2' }}
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'Runes of Aldur' }}
+          SCOUT_API_BASE: ${{ vars.SCOUT_API_BASE || 'https://api.poe2scout.com' }}
+          SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'POE2-Expedition-Radar-CurrencySnapshot/2.0' }}
+        run: python scripts/resolve_reward_ids.py
+
+      - name: Fetch hourly reward prices
+        env:
+          SCOUT_REALM: ${{ vars.SCOUT_REALM || 'poe2' }}
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'Runes of Aldur' }}
+          SCOUT_API_BASE: ${{ vars.SCOUT_API_BASE || 'https://api.poe2scout.com' }}
+          SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'POE2-Expedition-Radar-CurrencySnapshot/2.0' }}
+          SCOUT_TIMEOUT: '30'
+          SCOUT_RETRIES: '3'
+          SNAPSHOT_RETENTION_DAYS: ${{ vars.SNAPSHOT_RETENTION_DAYS || '30' }}
+        run: python scripts/fetch_snapshot.py
+
+      - name: Verify output
+        run: |
+          test -s data/current.json
+          test -s data/meta.json
+          python -m json.tool data/current.json >/dev/null
+          echo "Snapshot OK"
+          cat data/meta.json
+
+      - name: Commit data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/rewards.json data/current.json data/meta.json data/snapshots
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(data): update POE2 reward price snapshot"
+          git push
