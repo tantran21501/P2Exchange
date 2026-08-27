@@ -1,0 +1,84 @@
+name: POE2 Scout Reward Snapshot
+
+on:
+  schedule:
+    - cron: "5 */2 * * *"
+  workflow_dispatch:
+    inputs:
+      league:
+        description: 'POE2 Scout league name, for example "Runes of Aldur"'
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: poe2-scout-reward-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s scripts -p 'test*.py'
+
+      - name: Fetch POE2 Scout reward snapshot
+        env:
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || '' }}
+          SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'P2Exchange-POE2ScoutRewardSnapshot/1.0 (github-actions)' }}
+          SCOUT_TIMEOUT: "30"
+          SCOUT_RETRIES: "4"
+        run: python3 scripts/fetch_scout_snapshot.py --output data/current.json
+
+      - name: Validate snapshot
+        run: |
+          test -s data/current.json
+          python3 -m json.tool data/current.json >/dev/null
+          python3 - <<'PY'
+          import json
+
+          with open("data/current.json", encoding="utf-8") as handle:
+              data = json.load(handle)
+
+          stats = data["stats"]
+          print("league=", data["league"])
+          print("reference_currency=", data["reference_currency"])
+          print("priced=", stats["priced"])
+          print("unpriced=", stats["unpriced"])
+
+          if data["source"] != "poe2scout":
+              raise SystemExit("Unexpected source")
+          if data["reference_currency"] != "exalted":
+              raise SystemExit("Unexpected reference currency")
+          if stats["requested"] == 0:
+              raise SystemExit("No rewards requested")
+          if stats["priced"] == 0:
+              raise SystemExit("No rewards were priced")
+          PY
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/current.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(data): update POE2 Scout reward snapshot"
+          git push
