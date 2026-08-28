@@ -81,3 +81,49 @@ data/snapshots/**
 ```
 
 No API key is required for the documented poe.ninja economy endpoints. Use a descriptive User-Agent and keep request volume low.
+
+
+
+
+#### POENINJA:
+
+## Category:
+Currency
+Fragments
+Abyss
+UncutGems
+LineageSupportGems
+Essences
+SoulCores
+Idols
+Runes
+Ritual
+Expedition
+Delirium
+Breach
+Verisium
+
+# Currency
+curl -G 'https://poe.ninja/poe2/api/economy/exchange/current/overview' \
+  --data-urlencode 'league=Runes of Aldur' \
+  --data-urlencode 'type=Currency'
+
+# Runes
+curl -G 'https://poe.ninja/poe2/api/economy/exchange/current/overview' \
+  --data-urlencode 'league=Runes of Aldur' \
+  --data-urlencode 'type=Runes'
+
+# Expedition
+curl -G 'https://poe.ninja/poe2/api/economy/exchange/current/overview' \
+  --data-urlencode 'league=Runes of Aldur' \
+  --data-urlencode 'type=Expedition'
+
+# Verisium -> Alloy
+curl -G 'https://poe.ninja/poe2/api/economy/exchange/current/overview' \
+  --data-urlencode 'league=Runes of Aldur' \
+  --data-urlencode 'type=Verisium'
+
+# Uncut Gems -> Gems
+curl -G 'https://poe.ninja/poe2/api/economy/exchange/current/overview' \
+  --data-urlencode 'league=Runes of Aldur' \
+  --data-urlencode 'type=UncutGems'

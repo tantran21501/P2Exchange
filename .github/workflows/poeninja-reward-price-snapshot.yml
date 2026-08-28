@@ -1,11 +1,17 @@
-name: POE2 Scout Reward Snapshot
+name: POE Ninja Reward Price Snapshot
 
 on:
-  # Temporarily disable the scheduled Scout worker while testing poe.ninja pricing.
+  schedule:
+    - cron: "7 * * * *"
   workflow_dispatch:
     inputs:
       league:
-        description: 'POE2 Scout league name, for example "Runes of Aldur"'
+        description: 'poe.ninja league id, for example "Runes of Aldur"'
+        required: false
+        type: string
+        default: ""
+      league_name:
+        description: 'poe.ninja league name fallback, for example "Runes of Aldur"'
         required: false
         type: string
         default: ""
@@ -14,7 +20,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: poe2-scout-reward-snapshot
+  group: poeninja-reward-price-snapshot
   cancel-in-progress: false
 
 jobs:
@@ -34,16 +40,17 @@ jobs:
           python-version: "3.13"
 
       - name: Run unit tests
-        run: python3 -m unittest discover -s scripts -p 'test*.py'
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
 
-      - name: Fetch POE2 Scout reward snapshot
+      - name: Fetch poe.ninja reward snapshot
         env:
-          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'current' }}
-          SCOUT_REFERENCE_CURRENCIES: "exalted,divine"
-          SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'P2Exchange-POE2ScoutRewardSnapshot/1.0 (github-actions)' }}
-          SCOUT_TIMEOUT: "30"
-          SCOUT_RETRIES: "4"
-        run: python3 scripts/fetch_scout_snapshot.py --output data/current.json
+          NINJA_LEAGUE: ${{ inputs.league || vars.NINJA_LEAGUE || '' }}
+          NINJA_LEAGUE_NAME: ${{ inputs.league_name || vars.NINJA_LEAGUE_NAME || '' }}
+          NINJA_REFERENCE_CURRENCIES: "exalted,divine"
+          NINJA_USER_AGENT: ${{ vars.NINJA_USER_AGENT || 'P2Exchange-POENinjaRewardSnapshot/1.0 (github-actions)' }}
+          NINJA_TIMEOUT: "30"
+          NINJA_RETRIES: "4"
+        run: python3 scripts/fetch_poeninja_snapshot.py --output data/current.json
 
       - name: Validate snapshot
         run: |
@@ -58,10 +65,11 @@ jobs:
           stats = data["stats"]
           print("league=", data["league"])
           print("reference_currencies=", data["reference_currencies"])
+          print("categories_fetched=", data["categories_fetched"])
           print("priced=", stats["priced"])
           print("unpriced=", stats["unpriced"])
 
-          if data["source"] != "poe2scout":
+          if data["source"] != "poeninja":
               raise SystemExit("Unexpected source")
           if data["reference_currencies"] != ["exalted", "divine"]:
               raise SystemExit("Unexpected reference currencies")
@@ -69,6 +77,8 @@ jobs:
               raise SystemExit("No rewards requested")
           if stats["priced"] == 0:
               raise SystemExit("No rewards were priced")
+          if "Currency" not in data["categories_fetched"]:
+              raise SystemExit("Currency category was not fetched")
           if not any(row.get("price_exalted") is not None for row in data["rewards"]):
               raise SystemExit("No rewards have Exalted prices")
           if not any(row.get("price_divine") is not None for row in data["rewards"]):
@@ -110,5 +120,5 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "chore(data): update POE2 Scout reward snapshot"
+          git commit -m "chore(data): update poe.ninja reward snapshot"
           git push
