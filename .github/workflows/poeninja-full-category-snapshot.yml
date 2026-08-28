@@ -1,0 +1,133 @@
+name: POE Ninja Full Category Snapshot
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      league:
+        description: 'poe.ninja league id, for example "Runes of Aldur"'
+        required: false
+        type: string
+        default: ""
+      league_name:
+        description: 'poe.ninja league name fallback, for example "Runes of Aldur"'
+        required: false
+        type: string
+        default: ""
+      categories:
+        description: "Optional comma separated poe.ninja category override"
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: poeninja-full-category-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+
+      - name: Prepare snapshot timestamp
+        run: |
+          python3 - <<'PY' >> "$GITHUB_ENV"
+          from datetime import datetime, timezone
+
+          now = datetime.now(timezone.utc)
+          print(f"NINJA_SNAPSHOT_TIME={now.strftime('%Y-%m-%dT%H:%M:%SZ')}")
+          print(f"SNAPSHOT_DIR=data/snapshots/{now.strftime('%d%m%y_%H')}")
+          PY
+
+      - name: Fetch poe.ninja full category snapshot
+        env:
+          NINJA_LEAGUE: ${{ inputs.league || vars.NINJA_LEAGUE || '' }}
+          NINJA_LEAGUE_NAME: ${{ inputs.league_name || vars.NINJA_LEAGUE_NAME || '' }}
+          NINJA_CATEGORIES: ${{ inputs.categories || vars.NINJA_CATEGORIES || 'Currency,Fragments,Abyss,UncutGems,LineageSupportGems,Essences,SoulCores,Idols,Runes,Ritual,Expedition,Delirium,Breach,Verisium' }}
+          NINJA_USER_AGENT: ${{ vars.NINJA_USER_AGENT || 'P2Exchange-POENinjaFullCategorySnapshot/1.0 (github-actions)' }}
+          NINJA_TIMEOUT: "30"
+          NINJA_RETRIES: "4"
+        run: python3 scripts/fetch_poeninja_categories_snapshot.py --output-dir data/snapshots
+
+      - name: Validate full category snapshot
+        env:
+          NINJA_CATEGORIES: ${{ inputs.categories || vars.NINJA_CATEGORIES || 'Currency,Fragments,Abyss,UncutGems,LineageSupportGems,Essences,SoulCores,Idols,Runes,Ritual,Expedition,Delirium,Breach,Verisium' }}
+        run: |
+          test -d "$SNAPSHOT_DIR"
+          test -s "$SNAPSHOT_DIR/_manifest.json"
+          python3 -m json.tool "$SNAPSHOT_DIR/_manifest.json" >/dev/null
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "scripts")
+
+          import fetch_poeninja_snapshot as pn
+
+          snapshot_dir = Path(os.environ["SNAPSHOT_DIR"])
+          expected_categories = pn.parse_categories(os.environ["NINJA_CATEGORIES"])
+
+          with (snapshot_dir / "_manifest.json").open(encoding="utf-8") as handle:
+              manifest = json.load(handle)
+
+          print("snapshot_dir=", snapshot_dir)
+          print("league=", manifest["league"])
+          print("categories_fetched=", manifest["categories_fetched"])
+
+          if manifest["source"] != "poeninja":
+              raise SystemExit("Unexpected source")
+          if manifest["snapshot_folder"] != snapshot_dir.name:
+              raise SystemExit("Manifest snapshot folder does not match path")
+          if manifest["categories_fetched"] != expected_categories:
+              raise SystemExit("Unexpected categories fetched")
+
+          for category in expected_categories:
+              path = snapshot_dir / f"{category}.json"
+              if not path.is_file():
+                  raise SystemExit(f"Missing category file: {path}")
+              with path.open(encoding="utf-8") as handle:
+                  payload = json.load(handle)
+              if not isinstance(payload, dict):
+                  raise SystemExit(f"{path} must contain a JSON object")
+              if not isinstance(payload.get("lines"), list):
+                  raise SystemExit(f"{path} must contain a lines array")
+
+          if "Currency" in expected_categories:
+              with (snapshot_dir / "Currency.json").open(encoding="utf-8") as handle:
+                  currency = json.load(handle)
+              core = currency.get("core")
+              if not isinstance(core, dict) or not core.get("primary"):
+                  raise SystemExit("Currency.json must contain core.primary")
+          PY
+
+      - name: Commit full category snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/snapshots
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(data): update poe.ninja category snapshots"
+          git push

@@ -51,32 +51,40 @@ NINJA_LEAGUE=runesofaldurhc
 
 You can also leave `NINJA_LEAGUE` empty and use `NINJA_LEAGUE_NAME`, or let the script select the first active temporary league returned by `/economy/leagues`.
 
-The workflow_dispatch form accepts `league_id` and `league_name` for manual testing.
+The workflow_dispatch form accepts `league` and `league_name` for manual testing.
 
 ## Output
 
 `data/current.json` is intentionally compact and contains only the reward rows needed by the client, plus the reference conversion and minimal market metadata.
 
-`data/snapshots/YYYY-MM-DD/HH.json` stores the hourly history. Old snapshots are removed according to `SNAPSHOT_RETENTION_DAYS` (default 30).
+`data/currency.json` is the even smaller client-facing reward price payload.
+
+`data/snapshots/DDMMYY_HH/<Category>.json` stores raw hourly poe.ninja category snapshots in UTC. Each snapshot folder also contains `_manifest.json` with the selected league, generation time, fetched categories, and item/line counts.
 
 ## Local test
 
 ```bash
-cd scripts
-python test_snapshot.py
+python3 -m unittest discover -s scripts -p 'test_*.py'
 ```
 
-The tests cover both the normal anchor-line path and the `core.rates` fallback path.
+The tests cover the reward pricing conversion paths and the raw category snapshot writer.
 
 ## GitHub Action
 
-`.github/workflows/poe2-reward-price-snapshot.yml` runs at minute 5 of every hour and can also be triggered manually.
+`.github/workflows/poeninja-reward-price-snapshot.yml` updates reward pricing at minute 7 of every hour and can also be triggered manually.
 
-The Action commits only:
+`.github/workflows/poeninja-full-category-snapshot.yml` stores the raw category snapshots at minute 17 of every hour and can also be triggered manually.
+
+The reward pricing Action commits only:
 
 ```text
 data/current.json
-data/meta.json
+data/currency.json
+```
+
+The full category snapshot Action commits only:
+
+```text
 data/snapshots/**
 ```
 
