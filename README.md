@@ -1,6 +1,6 @@
 # POE2 Expedition / Runeshape Reward Snapshot
 
-Hourly GitHub Action that fetches the compact Path of Exile 2 economy data needed to price the Runeshape reward catalog in Exalted and Divine.
+Hourly poe.ninja snapshots that fetch the compact Path of Exile 2 economy data needed to price the Runeshape reward catalog in Exalted and Divine.
 
 ## Data source
 
@@ -17,7 +17,7 @@ Supported categories used by this project:
 - `Expedition`
 - `Verisium` (only if rewards.json uses this type)
 
-poe.ninja says PoE2 economy data refreshes roughly hourly, so the workflow runs once per hour.
+poe.ninja says PoE2 economy data refreshes roughly hourly, so a Cloudflare Worker dispatches the snapshot workflows once per hour.
 
 ## Important implementation detail
 
@@ -71,9 +71,11 @@ The tests cover the reward pricing conversion paths and the raw category snapsho
 
 ## GitHub Action
 
-`.github/workflows/poeninja-reward-price-snapshot.yml` updates reward pricing at minute 7 of every hour and can also be triggered manually.
+GitHub's native scheduled workflows are not used for poe.ninja snapshots. A Cloudflare Worker in `workers/poeninja-github-scheduler` owns the hourly schedule and dispatches the workflows through GitHub's `workflow_dispatch` API.
 
-`.github/workflows/poeninja-full-category-snapshot.yml` stores the raw category snapshots at minute 17 of every hour and can also be triggered manually.
+`.github/workflows/poeninja-reward-price-snapshot.yml` updates reward pricing when dispatched by the Worker at minute 7 of every hour and can also be triggered manually.
+
+`.github/workflows/poeninja-full-category-snapshot.yml` stores the raw category snapshots when dispatched by the Worker at minute 17 of every hour and can also be triggered manually.
 
 The reward pricing Action commits only:
 
