@@ -2,7 +2,7 @@ name: POE Ninja Reward Price Snapshot
 # scheduler test
 on:
   schedule:
-    - cron: "37 * * * *"
+    - cron: "7 * * * *"
       timezone: "Asia/Ho_Chi_Minh"
   workflow_dispatch:
     inputs:
