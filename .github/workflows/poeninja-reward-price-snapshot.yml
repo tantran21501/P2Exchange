@@ -3,6 +3,7 @@ name: POE Ninja Reward Price Snapshot
 on:
   schedule:
     - cron: "37 * * * *"
+      timezone: "Asia/Ho_Chi_Minh"
   workflow_dispatch:
     inputs:
       league:

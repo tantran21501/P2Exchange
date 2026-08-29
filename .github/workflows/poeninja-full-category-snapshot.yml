@@ -3,6 +3,7 @@ name: POE Ninja Full Category Snapshot
 on:
   schedule:
     - cron: "47 * * * *"
+      timezone: "Asia/Ho_Chi_Minh"
   workflow_dispatch:
     inputs:
       league:
