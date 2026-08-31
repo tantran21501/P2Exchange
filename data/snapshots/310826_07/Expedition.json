@@ -1,0 +1,661 @@
+{
+  "core": {
+    "items": [
+      {
+        "id": "divine",
+        "name": "Divine Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "category": "Currency",
+        "detailsId": "divine-orb"
+      },
+      {
+        "id": "exalted",
+        "name": "Exalted Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+        "category": "Currency",
+        "detailsId": "exalted-orb"
+      },
+      {
+        "id": "chaos",
+        "name": "Chaos Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "category": "Currency",
+        "detailsId": "chaos-orb"
+      }
+    ],
+    "rates": {
+      "exalted": 402.8,
+      "chaos": 11.25
+    },
+    "primary": "divine",
+    "secondary": "chaos"
+  },
+  "lines": [
+    {
+      "id": "aldurs-saga",
+      "primaryValue": 38.86,
+      "volumePrimaryValue": 3381,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.02573,
+      "sparkline": {
+        "totalChange": 9.02,
+        "data": [
+          6.67,
+          8.46,
+          10.05,
+          9.93,
+          9.39,
+          8.55,
+          9.02
+        ]
+      }
+    },
+    {
+      "id": "blazing-flux",
+      "primaryValue": 0.01987,
+      "volumePrimaryValue": 0.6856,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.1249,
+      "sparkline": {
+        "totalChange": -27.17,
+        "data": [
+          -38.03,
+          -21.19,
+          -16.18,
+          -25.54,
+          -28.87,
+          -15.44,
+          -27.17
+        ]
+      }
+    },
+    {
+      "id": "chilling-flux",
+      "primaryValue": 0.0168,
+      "volumePrimaryValue": 0.5152,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.1478,
+      "sparkline": {
+        "totalChange": -51.54,
+        "data": [
+          -53.29,
+          -57.63,
+          -69.17,
+          -54.02,
+          -49.72,
+          -72.91,
+          -51.54
+        ]
+      }
+    },
+    {
+      "id": "crackling-flux",
+      "primaryValue": 0.01557,
+      "volumePrimaryValue": 0.3943,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.1595,
+      "sparkline": {
+        "totalChange": -24.55,
+        "data": [
+          -22.59,
+          -5.47,
+          -22.77,
+          -27.7,
+          -39.02,
+          -50.14,
+          -24.55
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-15",
+      "primaryValue": 0.02234,
+      "volumePrimaryValue": 0.0149,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.1111,
+      "sparkline": {
+        "totalChange": -55,
+        "data": [
+          -16.24,
+          55.94,
+          70,
+          -33.25,
+          -6.4,
+          -5.17,
+          -55
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-16",
+      "primaryValue": 0.01241,
+      "volumePrimaryValue": 0.002069,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.2,
+      "sparkline": {
+        "totalChange": 42.86,
+        "data": [
+          -49.76,
+          78.25,
+          157.9,
+          -26.53,
+          94.05,
+          25.17,
+          42.86
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-19",
+      "primaryValue": 0.01064,
+      "volumePrimaryValue": 0.01241,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.2333,
+      "sparkline": {
+        "totalChange": -18.75,
+        "data": [
+          17.14,
+          -31.11,
+          34.69,
+          185.2,
+          89.14,
+          21.05,
+          -18.75
+        ]
+      }
+    },
+    {
+      "id": "void-flux",
+      "primaryValue": 0.07,
+      "volumePrimaryValue": 1.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 14.29,
+      "sparkline": {
+        "totalChange": -11.19,
+        "data": [
+          22.64,
+          24.3,
+          15.76,
+          35.84,
+          32.29,
+          -2.77,
+          -11.19
+        ]
+      }
+    },
+    {
+      "id": "perfect-flux",
+      "primaryValue": 42.84,
+      "volumePrimaryValue": 578.3,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.02334,
+      "sparkline": {
+        "totalChange": 8.7,
+        "data": [
+          5.19,
+          2.76,
+          1.3,
+          3.51,
+          7.68,
+          17.06,
+          8.7
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-20",
+      "primaryValue": 0.227,
+      "volumePrimaryValue": 0.643,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.01094,
+      "sparkline": {
+        "totalChange": 152.7,
+        "data": [
+          6.44,
+          30.95,
+          25.38,
+          43.75,
+          84.49,
+          64.06,
+          152.7
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-8",
+      "primaryValue": 40,
+      "volumePrimaryValue": 6.67,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.025,
+      "sparkline": {
+        "totalChange": 135.3,
+        "data": [
+          null,
+          null,
+          null,
+          0,
+          70.59,
+          null,
+          135.3
+        ]
+      }
+    },
+    {
+      "id": "expedition-logbook",
+      "primaryValue": 0.7109,
+      "volumePrimaryValue": 229.5,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1.41,
+      "sparkline": {
+        "totalChange": -50.33,
+        "data": [
+          -2.39,
+          -7.47,
+          -8.57,
+          -17.48,
+          -23.98,
+          -31.83,
+          -50.33
+        ]
+      }
+    },
+    {
+      "id": "medveds-saga",
+      "primaryValue": 0.03195,
+      "volumePrimaryValue": 1.54,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.07771,
+      "sparkline": {
+        "totalChange": 18.85,
+        "data": [
+          18.25,
+          34.69,
+          8.57,
+          27.11,
+          26.38,
+          14.4,
+          18.85
+        ]
+      }
+    },
+    {
+      "id": "olroths-saga",
+      "primaryValue": 0.08674,
+      "volumePrimaryValue": 3.14,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02862,
+      "sparkline": {
+        "totalChange": -62.29,
+        "data": [
+          11.02,
+          3.16,
+          1.63,
+          4.89,
+          -15.95,
+          -55.99,
+          -62.29
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-10",
+      "primaryValue": 1,
+      "volumePrimaryValue": 0.5,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1,
+      "sparkline": {
+        "totalChange": 0,
+        "data": [
+          null,
+          0,
+          0,
+          0,
+          -50.0,
+          -50.0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-11",
+      "primaryValue": 0.1092,
+      "volumePrimaryValue": 0.07283,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02273,
+      "sparkline": {
+        "totalChange": 53.67,
+        "data": [
+          34.97,
+          79.28,
+          79.31,
+          114.1,
+          42.32,
+          64.83,
+          53.67
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-12",
+      "primaryValue": 0.024,
+      "volumePrimaryValue": 0.012,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.1034,
+      "sparkline": {
+        "totalChange": -34.68,
+        "data": [
+          63.88,
+          11.49,
+          61.97,
+          156.4,
+          -4.23,
+          148.0,
+          -34.68
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-13",
+      "primaryValue": 0.1041,
+      "volumePrimaryValue": 0.2603,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02385,
+      "sparkline": {
+        "totalChange": 109.0,
+        "data": [
+          0.79,
+          30.89,
+          19.78,
+          43.69,
+          -30.05,
+          32.03,
+          109.0
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-14",
+      "primaryValue": 0.1235,
+      "volumePrimaryValue": 0.08234,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.0201,
+      "sparkline": {
+        "totalChange": 11.8,
+        "data": [
+          -62.06,
+          -61.05,
+          -39.25,
+          -40.7,
+          -50.22,
+          34.91,
+          11.8
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-17",
+      "primaryValue": 0.03476,
+      "volumePrimaryValue": 0.04055,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.07143,
+      "sparkline": {
+        "totalChange": 133.3,
+        "data": [
+          2.29,
+          -31.46,
+          61.46,
+          237.6,
+          280.3,
+          350.3,
+          133.3
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-18",
+      "primaryValue": 0.01918,
+      "volumePrimaryValue": 0.03517,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.1294,
+      "sparkline": {
+        "totalChange": 157.6,
+        "data": [
+          -21.87,
+          35.63,
+          82.52,
+          170.2,
+          101.8,
+          41.8,
+          157.6
+        ]
+      }
+    },
+    {
+      "id": "thaumaturgic-flux-9",
+      "primaryValue": 0.05793,
+      "volumePrimaryValue": 0.02897,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.04286,
+      "sparkline": {
+        "totalChange": -73.78,
+        "data": [
+          -57.9,
+          -19.35,
+          -52.53,
+          -32.58,
+          -41.29,
+          -47.03,
+          -73.78
+        ]
+      }
+    },
+    {
+      "id": "uhtreds-saga",
+      "primaryValue": 0.6523,
+      "volumePrimaryValue": 50.33,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1.53,
+      "sparkline": {
+        "totalChange": -31.35,
+        "data": [
+          -5.77,
+          -7.05,
+          -6.15,
+          -7.34,
+          -23.14,
+          -27.27,
+          -31.35
+        ]
+      }
+    },
+    {
+      "id": "voranas-saga",
+      "primaryValue": 0.03001,
+      "volumePrimaryValue": 1.09,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.08273,
+      "sparkline": {
+        "totalChange": 22.8,
+        "data": [
+          17.23,
+          4.27,
+          7.57,
+          20.06,
+          28.32,
+          37.12,
+          22.8
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "aldurs-saga",
+      "name": "Aldur's Saga",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlNSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/e4e66b1f57/SpecialExpeditionPage5.png",
+      "category": "Expedition",
+      "detailsId": "aldurs-saga"
+    },
+    {
+      "id": "blazing-flux",
+      "name": "Blazing Flux",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQXJjYW5lRmx1eEZpcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5894d96668/ArcaneFluxFire.png",
+      "category": "Expedition",
+      "detailsId": "blazing-flux"
+    },
+    {
+      "id": "chilling-flux",
+      "name": "Chilling Flux",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQXJjYW5lRmx1eENvbGQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8be4ea67ff/ArcaneFluxCold.png",
+      "category": "Expedition",
+      "detailsId": "chilling-flux"
+    },
+    {
+      "id": "crackling-flux",
+      "name": "Crackling Flux",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQXJjYW5lRmx1eExpZ2h0bmluZyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/6f9758e0a3/ArcaneFluxLightning.png",
+      "category": "Expedition",
+      "detailsId": "crackling-flux"
+    },
+    {
+      "id": "thaumaturgic-flux-15",
+      "name": "Thaumaturgic Flux (Level 15)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-15"
+    },
+    {
+      "id": "thaumaturgic-flux-16",
+      "name": "Thaumaturgic Flux (Level 16)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-16"
+    },
+    {
+      "id": "thaumaturgic-flux-19",
+      "name": "Thaumaturgic Flux (Level 19)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-19"
+    },
+    {
+      "id": "void-flux",
+      "name": "Void Flux",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQXJjYW5lRmx1eCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/05c5ace7f7/ArcaneFlux.png",
+      "category": "Expedition",
+      "detailsId": "void-flux"
+    },
+    {
+      "id": "perfect-flux",
+      "name": "Perfect Flux",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5UG93ZXJmdWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/43be23e971/ExpeditionGemCurrencyPowerful.png",
+      "category": "Expedition",
+      "detailsId": "perfect-flux"
+    },
+    {
+      "id": "thaumaturgic-flux-20",
+      "name": "Thaumaturgic Flux (Level 20)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-20"
+    },
+    {
+      "id": "thaumaturgic-flux-8",
+      "name": "Thaumaturgic Flux (Level 8)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-8"
+    },
+    {
+      "id": "expedition-logbook",
+      "name": "Expedition Logbook",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkxvZ2Jvb2s1Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/841a5e9622/ExpeditionLogbook5.png",
+      "category": "Expedition",
+      "detailsId": "expedition-logbook"
+    },
+    {
+      "id": "medveds-saga",
+      "name": "Medved's Saga",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlMyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9eb5b576fc/SpecialExpeditionPage3.png",
+      "category": "Expedition",
+      "detailsId": "medveds-saga"
+    },
+    {
+      "id": "olroths-saga",
+      "name": "Olroth's Saga",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlMSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/e4b423d772/SpecialExpeditionPage1.png",
+      "category": "Expedition",
+      "detailsId": "olroths-saga"
+    },
+    {
+      "id": "thaumaturgic-flux-10",
+      "name": "Thaumaturgic Flux (Level 10)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-10"
+    },
+    {
+      "id": "thaumaturgic-flux-11",
+      "name": "Thaumaturgic Flux (Level 11)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-11"
+    },
+    {
+      "id": "thaumaturgic-flux-12",
+      "name": "Thaumaturgic Flux (Level 12)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-12"
+    },
+    {
+      "id": "thaumaturgic-flux-13",
+      "name": "Thaumaturgic Flux (Level 13)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-13"
+    },
+    {
+      "id": "thaumaturgic-flux-14",
+      "name": "Thaumaturgic Flux (Level 14)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-14"
+    },
+    {
+      "id": "thaumaturgic-flux-17",
+      "name": "Thaumaturgic Flux (Level 17)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-17"
+    },
+    {
+      "id": "thaumaturgic-flux-18",
+      "name": "Thaumaturgic Flux (Level 18)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-18"
+    },
+    {
+      "id": "thaumaturgic-flux-9",
+      "name": "Thaumaturgic Flux (Level 9)",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvRXhwZWRpdGlvbkdlbUN1cnJlbmN5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51fec6d0d5/ExpeditionGemCurrency.png",
+      "category": "Expedition",
+      "detailsId": "thaumaturgic-flux-level-9"
+    },
+    {
+      "id": "uhtreds-saga",
+      "name": "Uhtred's Saga",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlNCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/0470c24911/SpecialExpeditionPage4.png",
+      "category": "Expedition",
+      "detailsId": "uhtreds-saga"
+    },
+    {
+      "id": "voranas-saga",
+      "name": "Vorana's Saga",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3BlY2lhbEV4cGVkaXRpb25QYWdlMiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/057899d625/SpecialExpeditionPage2.png",
+      "category": "Expedition",
+      "detailsId": "voranas-saga"
+    }
+  ]
+}
