@@ -1,0 +1,19 @@
+name = "p2exchange-poe2scout-pair-github-scheduler"
+main = "src/index.ts"
+compatibility_date = "2026-08-29"
+workers_dev = false
+
+[observability]
+enabled = true
+
+[triggers]
+crons = [ "27 * * * *" ]
+
+[vars]
+GITHUB_OWNER = "tantran21501"
+GITHUB_REPO = "P2Exchange"
+GITHUB_REF = "main"
+PAIR_WORKFLOW = "poe2scout-pair-snapshot.yml"
+
+[secrets]
+required = [ "GITHUB_ACTIONS_DISPATCH_TOKEN" ]

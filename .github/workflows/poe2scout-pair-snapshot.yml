@@ -1,0 +1,81 @@
+name: POE2 Scout Pair Snapshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      league:
+        description: 'POE2 Scout league name; empty selects current softcore'
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: poe2scout-pair-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Run unit tests
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+      - name: Select current hourly folder
+        run: |
+          python3 - <<'PY' >> "$GITHUB_ENV"
+          from datetime import datetime, timezone
+          now = datetime.now(timezone.utc)
+          print(f"PAIR_SNAPSHOT_TIME={now.strftime('%Y-%m-%dT%H:%M:%SZ')}")
+          print(f"SNAPSHOT_DIR=data/snapshots/{now.strftime('%d%m%y_%H')}")
+          PY
+      - name: Fetch and compact POE2 Scout pair books
+        env:
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'current' }}
+          SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'P2Exchange-POE2ScoutPairSnapshot/1.0 (github-actions)' }}
+          SCOUT_TIMEOUT: "30"
+          SCOUT_RETRIES: "4"
+        run: python3 scripts/fetch_scout_pairs_snapshot.py --snapshots-dir data/snapshots
+      - name: Validate compact pair books
+        run: |
+          test -d "$SNAPSHOT_DIR"
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          folder = Path(os.environ["SNAPSHOT_DIR"])
+          manifest = json.loads((folder / "_manifest.json").read_text(encoding="utf-8"))
+          stats = manifest.get("pair_books") or {}
+          if stats.get("source") != "poe2scout-snapshot-pairs" or int(stats.get("total") or 0) <= 0:
+              raise SystemExit("No valid compact pair books were produced")
+          allowed = {"from", "to", "rate", "available_from", "available_to", "volume",
+                     "trade_count", "observed_at", "source", "observed", "independent"}
+          for path in folder.glob("*.json"):
+              if path.name.startswith("_"):
+                  continue
+              payload = json.loads(path.read_text(encoding="utf-8"))
+              for pair in payload.get("pairs") or []:
+                  if set(pair) != allowed or not pair["observed"] or not pair["independent"] or pair["rate"] <= 0:
+                      raise SystemExit(f"Invalid compact pair in {path}")
+          print("compact_pair_total=", stats["total"])
+          PY
+      - name: Commit compact pair books
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$SNAPSHOT_DIR"
+          if git diff --cached --quiet; then
+            echo "No pair changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(data): add POE2 Scout pair books"
+          git push

@@ -61,6 +61,10 @@ The workflow_dispatch form accepts `league` and `league_name` for manual testing
 
 `data/snapshots/DDMMYY_HH/<Category>.json` stores raw hourly poe.ninja category snapshots in UTC. Each snapshot folder also contains `_manifest.json` with the selected league, generation time, fetched categories, and item/line counts.
 
+At minute 27, a separate POE2 Scout workflow enriches the same hourly folder with compact
+observed pairs connecting items to Divine, Exalted, or Chaos. Raw `SnapshotPairs` payloads are
+never committed; only rates, directional capacity, traded volume and observation time are kept.
+
 ## Local test
 
 ```bash
@@ -76,6 +80,8 @@ GitHub's native scheduled workflows are not used for poe.ninja snapshots. A Clou
 `.github/workflows/poeninja-reward-price-snapshot.yml` updates reward pricing when dispatched by the Worker at minute 7 of every hour and can also be triggered manually.
 
 `.github/workflows/poeninja-full-category-snapshot.yml` stores the raw category snapshots when dispatched by the Worker at minute 17 of every hour and can also be triggered manually.
+
+`.github/workflows/poe2scout-pair-snapshot.yml` adds compact pair books when dispatched at minute 27.
 
 The reward pricing Action commits only:
 
