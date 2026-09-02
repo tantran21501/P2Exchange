@@ -18,6 +18,7 @@ concurrency:
 
 jobs:
   snapshot:
+    environment: MARKET_SYNC_WEBHOOK_SECRET
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
