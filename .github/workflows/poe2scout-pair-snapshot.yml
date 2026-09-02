@@ -64,7 +64,8 @@ jobs:
                   continue
               payload = json.loads(path.read_text(encoding="utf-8"))
               for pair in payload.get("pairs") or []:
-                  if set(pair) != allowed or not pair["observed"] or not pair["independent"] or pair["rate"] <= 0:
+                  if (set(pair) != allowed or not pair["observed"] or pair["independent"] or
+                          pair["source"] != "poe2scout-snapshot-estimate" or pair["rate"] <= 0):
                       raise SystemExit(f"Invalid compact pair in {path}")
           print("compact_pair_total=", stats["total"])
           PY
