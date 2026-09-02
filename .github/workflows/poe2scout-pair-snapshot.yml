@@ -91,6 +91,7 @@ jobs:
           import hashlib, hmac, json, os, secrets, subprocess, time
           from pathlib import Path
           from urllib.parse import urlsplit
+          from urllib.error import HTTPError
           from urllib.request import Request, urlopen
 
           url = os.environ.get("MARKET_SYNC_WEBHOOK_URL", "").strip()
@@ -114,12 +115,19 @@ jobs:
               request = Request(url, data=body, method="POST", headers={
                   "Content-Type": "application/json", "X-Market-Timestamp": timestamp,
                   "X-Market-Nonce": nonce, "X-Market-Signature": signature,
+                  "User-Agent": "P2Exchange-Market-Sync/1.0",
               })
               try:
                   with urlopen(request, timeout=60) as response:
                       if 200 <= response.status < 300:
                           print(response.read().decode())
                           break
+              except HTTPError as exc:
+                  detail = exc.read().decode(errors="replace")[:500]
+                  if attempt == 2:
+                      raise RuntimeError(f"Webhook HTTP {exc.code}: {detail}") from exc
+                  print(f"Webhook attempt {attempt + 1} failed: HTTP {exc.code}: {detail}")
+                  time.sleep(10 * (attempt + 1))
               except Exception as exc:
                   if attempt == 2:
                       raise
