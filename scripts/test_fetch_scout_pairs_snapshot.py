@@ -24,7 +24,7 @@ def side(api_id: str, text: str, category: str) -> dict:
 
 
 class PairSnapshotTests(unittest.TestCase):
-    def test_filters_to_hubs_and_emits_both_observed_directions(self) -> None:
+    def test_filters_to_hubs_and_emits_both_estimated_directions(self) -> None:
         documents = {"Currency": document("divine", "Divine Orb"),
                      "Delirium": document("omen", "Omen")}
         raw = [{
@@ -41,7 +41,8 @@ class PairSnapshotTests(unittest.TestCase):
         self.assertEqual(forward["rate"], 0.05)
         self.assertEqual(forward["available_to"], 10)
         self.assertEqual(forward["available_from"], 200)
-        self.assertTrue(forward["independent"])
+        self.assertFalse(forward["independent"])
+        self.assertEqual(forward["source"], "poe2scout-snapshot-estimate")
 
     def test_rejects_zero_liquidity_and_non_hub_pairs(self) -> None:
         documents = {"Currency": document("divine", "Divine Orb"),

@@ -121,9 +121,12 @@ def directed_pair(source: dict[str, Any], target: dict[str, Any], source_data: d
         "volume": float(positive(source_data.get("VolumeTraded")) or 0),
         "trade_count": 0,
         "observed_at": observed_at,
-        "source": "poe2scout-snapshot-pairs",
+        "source": "poe2scout-snapshot-estimate",
         "observed": True,
-        "independent": True,
+        # SnapshotPairs exposes relative values and aggregate stock, not a
+        # separately executable directional order book. Keep the direction as
+        # a useful market estimate, but never promote it to actionable.
+        "independent": False,
     }
 
 
