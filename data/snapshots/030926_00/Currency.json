@@ -1,0 +1,1363 @@
+{
+  "core": {
+    "items": [
+      {
+        "id": "divine",
+        "name": "Divine Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "category": "Currency",
+        "detailsId": "divine-orb"
+      },
+      {
+        "id": "exalted",
+        "name": "Exalted Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+        "category": "Currency",
+        "detailsId": "exalted-orb"
+      },
+      {
+        "id": "chaos",
+        "name": "Chaos Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "category": "Currency",
+        "detailsId": "chaos-orb"
+      }
+    ],
+    "rates": {
+      "exalted": 410.8,
+      "chaos": 9.95
+    },
+    "primary": "divine",
+    "secondary": "chaos"
+  },
+  "lines": [
+    {
+      "id": "alch",
+      "primaryValue": 0.0006577,
+      "volumePrimaryValue": 3.12,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 3.7,
+      "sparkline": {
+        "totalChange": -56.01,
+        "data": [
+          -9.12,
+          -34.75,
+          -23.05,
+          -27.41,
+          -43.4,
+          -38.25,
+          -56.01
+        ]
+      }
+    },
+    {
+      "id": "exalted",
+      "primaryValue": 0.002434,
+      "volumePrimaryValue": 1557,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 410.8,
+      "sparkline": {
+        "totalChange": -10.79,
+        "data": [
+          -1.74,
+          -5.75,
+          -9.1,
+          -10.07,
+          -11.01,
+          -9.23,
+          -10.79
+        ]
+      }
+    },
+    {
+      "id": "ancient-infuser",
+      "primaryValue": 0.3059,
+      "volumePrimaryValue": 24.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 3.27,
+      "sparkline": {
+        "totalChange": -4.64,
+        "data": [
+          4.1,
+          -6.64,
+          9.57,
+          19.08,
+          14.88,
+          -23.61,
+          -4.64
+        ]
+      }
+    },
+    {
+      "id": "chaos",
+      "primaryValue": 0.1005,
+      "volumePrimaryValue": 9801,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 9.95,
+      "sparkline": {
+        "totalChange": 7.55,
+        "data": [
+          0.5,
+          -11.09,
+          -15.16,
+          -4.58,
+          1.88,
+          11.08,
+          7.55
+        ]
+      }
+    },
+    {
+      "id": "divine",
+      "primaryValue": 1,
+      "volumePrimaryValue": 9801,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.1005,
+      "sparkline": {
+        "totalChange": -7.02,
+        "data": [
+          -0.47,
+          12.53,
+          17.89,
+          4.85,
+          -1.56,
+          -9.95,
+          -7.02
+        ]
+      }
+    },
+    {
+      "id": "annul",
+      "primaryValue": 0.4566,
+      "volumePrimaryValue": 2059,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.19,
+      "sparkline": {
+        "totalChange": 17.98,
+        "data": [
+          -0.26,
+          -2.21,
+          -1.81,
+          -1.15,
+          5.17,
+          9.74,
+          17.98
+        ]
+      }
+    },
+    {
+      "id": "architects-orb",
+      "primaryValue": 9.31,
+      "volumePrimaryValue": 1830,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.1074,
+      "sparkline": {
+        "totalChange": 80.53,
+        "data": [
+          16.69,
+          26.85,
+          26.72,
+          57.22,
+          73.89,
+          73.58,
+          80.53
+        ]
+      }
+    },
+    {
+      "id": "artificers",
+      "primaryValue": 0.003972,
+      "volumePrimaryValue": 2.09,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.613,
+      "sparkline": {
+        "totalChange": -37.31,
+        "data": [
+          -68.89,
+          -36.64,
+          -74.32,
+          -31.42,
+          -55.99,
+          -59.34,
+          -37.31
+        ]
+      }
+    },
+    {
+      "id": "aug",
+      "primaryValue": 0.0008691,
+      "volumePrimaryValue": 2.0,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1151,
+      "sparkline": {
+        "totalChange": -13.05,
+        "data": [
+          -12.5,
+          -14.92,
+          -2.41,
+          6.38,
+          42.16,
+          -0.88,
+          -13.05
+        ]
+      }
+    },
+    {
+      "id": "bauble",
+      "primaryValue": 0.02638,
+      "volumePrimaryValue": 20.14,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 3.81,
+      "sparkline": {
+        "totalChange": 108.7,
+        "data": [
+          -22.16,
+          -3.21,
+          -35.97,
+          -40.16,
+          -19.27,
+          61.02,
+          108.7
+        ]
+      }
+    },
+    {
+      "id": "chance",
+      "primaryValue": 0.01547,
+      "volumePrimaryValue": 14.33,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 64.64,
+      "sparkline": {
+        "totalChange": 2.05,
+        "data": [
+          -15.93,
+          -17.55,
+          -20.58,
+          -20.17,
+          -19.43,
+          -1.02,
+          2.05
+        ]
+      }
+    },
+    {
+      "id": "core-destabiliser",
+      "primaryValue": 3.43,
+      "volumePrimaryValue": 550.8,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.2914,
+      "sparkline": {
+        "totalChange": 6.85,
+        "data": [
+          5.56,
+          7.31,
+          5.11,
+          9.12,
+          13.73,
+          12.24,
+          6.85
+        ]
+      }
+    },
+    {
+      "id": "crystallised-corruption",
+      "primaryValue": 3.29,
+      "volumePrimaryValue": 469.7,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.3038,
+      "sparkline": {
+        "totalChange": -39.3,
+        "data": [
+          4.77,
+          -0.34,
+          -8.42,
+          -17.53,
+          -17.67,
+          -21.47,
+          -39.3
+        ]
+      }
+    },
+    {
+      "id": "etcher",
+      "primaryValue": 0.01328,
+      "volumePrimaryValue": 13.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 75.32,
+      "sparkline": {
+        "totalChange": 4.44,
+        "data": [
+          -16.02,
+          -13.36,
+          -11.29,
+          -4.18,
+          -2.55,
+          4.6,
+          4.44
+        ]
+      }
+    },
+    {
+      "id": "fracturing-orb",
+      "primaryValue": 6.64,
+      "volumePrimaryValue": 1612,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.1507,
+      "sparkline": {
+        "totalChange": -20.77,
+        "data": [
+          -7.44,
+          -12.15,
+          -23.94,
+          -15.04,
+          -5.76,
+          -10.1,
+          -20.77
+        ]
+      }
+    },
+    {
+      "id": "greater-regal-orb",
+      "primaryValue": 0.006695,
+      "volumePrimaryValue": 4.12,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.3636,
+      "sparkline": {
+        "totalChange": 15.4,
+        "data": [
+          -5.57,
+          -11.97,
+          -12.8,
+          -18.95,
+          -23.37,
+          -20.75,
+          15.4
+        ]
+      }
+    },
+    {
+      "id": "kopecs-orb-of-sacrifice",
+      "primaryValue": 0.1655,
+      "volumePrimaryValue": 0.8001,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.01471,
+      "sparkline": {
+        "totalChange": 186.3,
+        "data": [
+          144.5,
+          57.56,
+          68.76,
+          226.3,
+          137.4,
+          205.0,
+          186.3
+        ]
+      }
+    },
+    {
+      "id": "lesser-jewellers-orb",
+      "primaryValue": 0.0001961,
+      "volumePrimaryValue": 0.0138,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 12.41,
+      "sparkline": {
+        "totalChange": 61.14,
+        "data": [
+          -3.5,
+          -9.31,
+          -5.48,
+          -2.88,
+          -38.84,
+          27.35,
+          61.14
+        ]
+      }
+    },
+    {
+      "id": "perfect-chaos-orb",
+      "primaryValue": 7.72,
+      "volumePrimaryValue": 3671,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.1295,
+      "sparkline": {
+        "totalChange": 32.16,
+        "data": [
+          -1.75,
+          -4.78,
+          4.21,
+          40.63,
+          34.12,
+          37.56,
+          32.16
+        ]
+      }
+    },
+    {
+      "id": "perfect-exalted-orb",
+      "primaryValue": 2.8,
+      "volumePrimaryValue": 2058,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.3573,
+      "sparkline": {
+        "totalChange": 31.13,
+        "data": [
+          -1.49,
+          -1.32,
+          -8.5,
+          -7.96,
+          9.49,
+          16.04,
+          31.13
+        ]
+      }
+    },
+    {
+      "id": "perfect-jewellers-orb",
+      "primaryValue": 0.3918,
+      "volumePrimaryValue": 235.7,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.55,
+      "sparkline": {
+        "totalChange": 112.4,
+        "data": [
+          -5.61,
+          -17.31,
+          -25.45,
+          -9.19,
+          16.72,
+          43.74,
+          112.4
+        ]
+      }
+    },
+    {
+      "id": "perfect-regal-orb",
+      "primaryValue": 0.06119,
+      "volumePrimaryValue": 37.33,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 16.34,
+      "sparkline": {
+        "totalChange": 6.82,
+        "data": [
+          -13.83,
+          -20.2,
+          -23.02,
+          -8.74,
+          11.71,
+          14.86,
+          6.82
+        ]
+      }
+    },
+    {
+      "id": "regal",
+      "primaryValue": 0.001,
+      "volumePrimaryValue": 2.33,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1000,
+      "sparkline": {
+        "totalChange": -26.86,
+        "data": [
+          -4.93,
+          -29.82,
+          -9.12,
+          25.99,
+          13.72,
+          64.17,
+          -26.86
+        ]
+      }
+    },
+    {
+      "id": "scrap",
+      "primaryValue": 0.00185,
+      "volumePrimaryValue": 9.07,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 1.32,
+      "sparkline": {
+        "totalChange": 7.06,
+        "data": [
+          -16.6,
+          -6.67,
+          -18.36,
+          -11.82,
+          -21.01,
+          -10.66,
+          7.06
+        ]
+      }
+    },
+    {
+      "id": "vaal-arcanists-infuser",
+      "primaryValue": 0.006237,
+      "volumePrimaryValue": 0.4273,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.3903,
+      "sparkline": {
+        "totalChange": -53.58,
+        "data": [
+          -10.96,
+          -18.21,
+          28.02,
+          3.29,
+          -27.05,
+          -9.93,
+          -53.58
+        ]
+      }
+    },
+    {
+      "id": "vaal-armourers-infuser",
+      "primaryValue": 0.8101,
+      "volumePrimaryValue": 317.2,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1.23,
+      "sparkline": {
+        "totalChange": 26.78,
+        "data": [
+          0.35,
+          8.09,
+          25.28,
+          31.65,
+          33.26,
+          32.45,
+          26.78
+        ]
+      }
+    },
+    {
+      "id": "vaal-blacksmiths-infuser",
+      "primaryValue": 0.1956,
+      "volumePrimaryValue": 74.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 5.11,
+      "sparkline": {
+        "totalChange": -16.71,
+        "data": [
+          -3.68,
+          -11.6,
+          9.64,
+          9.14,
+          -3.25,
+          25.42,
+          -16.71
+        ]
+      }
+    },
+    {
+      "id": "vaal-cultivation-orb",
+      "primaryValue": 1.97,
+      "volumePrimaryValue": 304.0,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.5071,
+      "sparkline": {
+        "totalChange": -13.7,
+        "data": [
+          4.15,
+          -1.43,
+          -7.48,
+          -13.8,
+          -2.66,
+          1.5,
+          -13.7
+        ]
+      }
+    },
+    {
+      "id": "cryptic-key",
+      "primaryValue": 2.34,
+      "volumePrimaryValue": 342.8,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.4273,
+      "sparkline": {
+        "totalChange": -11.31,
+        "data": [
+          4.52,
+          -3.52,
+          0.94,
+          0.44,
+          -1.26,
+          -7.22,
+          -11.31
+        ]
+      }
+    },
+    {
+      "id": "hinekoras-lock",
+      "primaryValue": 1973,
+      "volumePrimaryValue": 13154,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.0005068,
+      "sparkline": {
+        "totalChange": 36.76,
+        "data": [
+          15.92,
+          12.45,
+          33.62,
+          34.81,
+          44.0,
+          42.58,
+          36.76
+        ]
+      }
+    },
+    {
+      "id": "artificers-shard",
+      "primaryValue": 0.001948,
+      "volumePrimaryValue": 0.001623,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 1.25,
+      "sparkline": {
+        "totalChange": 300,
+        "data": [
+          211.1,
+          189.8,
+          574.3,
+          144.7,
+          148.2,
+          674.2,
+          300
+        ]
+      }
+    },
+    {
+      "id": "chance-shard",
+      "primaryValue": 0.0009791,
+      "volumePrimaryValue": 0.01501,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 2.49,
+      "sparkline": {
+        "totalChange": -39.63,
+        "data": [
+          -41.11,
+          9.36,
+          -15.14,
+          -14.33,
+          -17.97,
+          18.12,
+          -39.63
+        ]
+      }
+    },
+    {
+      "id": "gcp",
+      "primaryValue": 0.02439,
+      "volumePrimaryValue": 59.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 41.01,
+      "sparkline": {
+        "totalChange": 59.05,
+        "data": [
+          -10.4,
+          -8.26,
+          -11.07,
+          66.52,
+          83.47,
+          103.4,
+          59.05
+        ]
+      }
+    },
+    {
+      "id": "greater-chaos-orb",
+      "primaryValue": 0.3343,
+      "volumePrimaryValue": 1011,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.99,
+      "sparkline": {
+        "totalChange": 20.54,
+        "data": [
+          1.61,
+          -9.86,
+          -8.9,
+          2.13,
+          11.74,
+          13.0,
+          20.54
+        ]
+      }
+    },
+    {
+      "id": "greater-exalted-orb",
+      "primaryValue": 0.016,
+      "volumePrimaryValue": 66.5,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 62.51,
+      "sparkline": {
+        "totalChange": 18.3,
+        "data": [
+          -24.18,
+          -29.71,
+          -25.41,
+          35.06,
+          66.03,
+          42.33,
+          18.3
+        ]
+      }
+    },
+    {
+      "id": "greater-jewellers-orb",
+      "primaryValue": 0.002186,
+      "volumePrimaryValue": 0.9332,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 1.11,
+      "sparkline": {
+        "totalChange": 22.49,
+        "data": [
+          5.57,
+          -20.51,
+          -7.12,
+          50.27,
+          50.0,
+          78.41,
+          22.49
+        ]
+      }
+    },
+    {
+      "id": "greater-orb-of-augmentation",
+      "primaryValue": 0.0004721,
+      "volumePrimaryValue": 0.594,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 5.16,
+      "sparkline": {
+        "totalChange": 17.19,
+        "data": [
+          -44.4,
+          -51.38,
+          -58.98,
+          -79.64,
+          -73.1,
+          -28.53,
+          17.19
+        ]
+      }
+    },
+    {
+      "id": "greater-orb-of-transmutation",
+      "primaryValue": 0.0001735,
+      "volumePrimaryValue": 0.09941,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 14.03,
+      "sparkline": {
+        "totalChange": -90.94,
+        "data": [
+          -52.34,
+          -88.92,
+          -79.14,
+          -65.54,
+          -87.04,
+          -59.69,
+          -90.94
+        ]
+      }
+    },
+    {
+      "id": "kamasas-orb-of-sacrifice",
+      "primaryValue": 0.1634,
+      "volumePrimaryValue": 1.01,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.0149,
+      "sparkline": {
+        "totalChange": 137.8,
+        "data": [
+          38.05,
+          22.87,
+          128.4,
+          96.52,
+          48.87,
+          46.68,
+          137.8
+        ]
+      }
+    },
+    {
+      "id": "mirror",
+      "primaryValue": 6458,
+      "volumePrimaryValue": 49511,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.0001548,
+      "sparkline": {
+        "totalChange": 26.32,
+        "data": [
+          4.78,
+          10.8,
+          19.19,
+          23.04,
+          35.38,
+          31.83,
+          26.32
+        ]
+      }
+    },
+    {
+      "id": "orb-of-extraction",
+      "primaryValue": 0.6184,
+      "volumePrimaryValue": 7.83,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1.62,
+      "sparkline": {
+        "totalChange": 16.23,
+        "data": [
+          -32.42,
+          -53.61,
+          -34.66,
+          -31.96,
+          7.61,
+          9.39,
+          16.23
+        ]
+      }
+    },
+    {
+      "id": "perfect-orb-of-augmentation",
+      "primaryValue": 0.06424,
+      "volumePrimaryValue": 136.7,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 15.57,
+      "sparkline": {
+        "totalChange": 17.44,
+        "data": [
+          -11.9,
+          -31.49,
+          -26.98,
+          -19.56,
+          45.35,
+          50.24,
+          17.44
+        ]
+      }
+    },
+    {
+      "id": "perfect-orb-of-transmutation",
+      "primaryValue": 0.01432,
+      "volumePrimaryValue": 8.83,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 69.85,
+      "sparkline": {
+        "totalChange": 5.6,
+        "data": [
+          -11.94,
+          -24.67,
+          -28.32,
+          -10.33,
+          31.02,
+          72.01,
+          5.6
+        ]
+      }
+    },
+    {
+      "id": "transmute",
+      "primaryValue": 0.0002614,
+      "volumePrimaryValue": 1.03,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 9.32,
+      "sparkline": {
+        "totalChange": 1.46,
+        "data": [
+          9.36,
+          14.13,
+          12.04,
+          14.47,
+          -10.45,
+          -13.75,
+          1.46
+        ]
+      }
+    },
+    {
+      "id": "vaal-catalysing-infuser",
+      "primaryValue": 7.86,
+      "volumePrimaryValue": 649.7,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.1272,
+      "sparkline": {
+        "totalChange": 125.4,
+        "data": [
+          2.63,
+          9.05,
+          16.98,
+          17.62,
+          32.89,
+          74.94,
+          125.4
+        ]
+      }
+    },
+    {
+      "id": "vaal",
+      "primaryValue": 0.007895,
+      "volumePrimaryValue": 48.83,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 126.7,
+      "sparkline": {
+        "totalChange": 13.93,
+        "data": [
+          -10.52,
+          -3.93,
+          -8.24,
+          -1.28,
+          2.25,
+          5.07,
+          13.93
+        ]
+      }
+    },
+    {
+      "id": "vaal-siphoner",
+      "primaryValue": 0.0004869,
+      "volumePrimaryValue": 0.0004057,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 5,
+      "sparkline": {
+        "totalChange": -27.27,
+        "data": [
+          -13.56,
+          -9.09,
+          -26.74,
+          -9.09,
+          -47.23,
+          -21.77,
+          -27.27
+        ]
+      }
+    },
+    {
+      "id": "whetstone",
+      "primaryValue": 0.001627,
+      "volumePrimaryValue": 3.05,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 1.5,
+      "sparkline": {
+        "totalChange": 63.4,
+        "data": [
+          -6.17,
+          -3.0,
+          -8.98,
+          8.39,
+          12.65,
+          17.94,
+          63.4
+        ]
+      }
+    },
+    {
+      "id": "wisdom",
+      "primaryValue": 1.354e-05,
+      "volumePrimaryValue": 0.1331,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 179.8,
+      "sparkline": {
+        "totalChange": -82.74,
+        "data": [
+          0.96,
+          -29.84,
+          -27.55,
+          -37.01,
+          -25.93,
+          -58.96,
+          -82.74
+        ]
+      }
+    },
+    {
+      "id": "yaomacs-orb-of-sacrifice",
+      "primaryValue": 0.02867,
+      "volumePrimaryValue": 0.172,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.08491,
+      "sparkline": {
+        "totalChange": 97.12,
+        "data": [
+          308.4,
+          68.83,
+          160.5,
+          103.8,
+          221.1,
+          128.4,
+          97.12
+        ]
+      }
+    },
+    {
+      "id": "yuguls-orb-of-sacrifice",
+      "primaryValue": 0.01903,
+      "volumePrimaryValue": 0.08561,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.128,
+      "sparkline": {
+        "totalChange": 404.2,
+        "data": [
+          99.5,
+          31.1,
+          19.24,
+          320.3,
+          317.7,
+          276.1,
+          404.2
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "alch",
+      "name": "Orb of Alchemy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9SYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/9b80b44821/CurrencyUpgradeToRare.png",
+      "category": "Currency",
+      "detailsId": "orb-of-alchemy"
+    },
+    {
+      "id": "exalted",
+      "name": "Exalted Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+      "category": "Currency",
+      "detailsId": "exalted-orb"
+    },
+    {
+      "id": "ancient-infuser",
+      "name": "Ancient Infuser",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkFuY2llbnRJbmZ1c2lvbiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/7d23730590/IncursionAncientInfusion.png",
+      "category": "Vaal",
+      "detailsId": "ancient-infuser"
+    },
+    {
+      "id": "chaos",
+      "name": "Chaos Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "category": "Currency",
+      "detailsId": "chaos-orb"
+    },
+    {
+      "id": "divine",
+      "name": "Divine Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+      "category": "Currency",
+      "detailsId": "divine-orb"
+    },
+    {
+      "id": "annul",
+      "name": "Orb of Annulment",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQW5udWxsT3JiIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/2daba8ccca/AnnullOrb.png",
+      "category": "Currency",
+      "detailsId": "orb-of-annulment"
+    },
+    {
+      "id": "architects-orb",
+      "name": "Architect's Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkdyZWF0ZXJWYWFsT3JiIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/7ba6f79f63/IncursionGreaterVaalOrb.png",
+      "category": "Vaal",
+      "detailsId": "architects-orb"
+    },
+    {
+      "id": "artificers",
+      "name": "Artificer's Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRFcXVpcG1lbnRTb2NrZXQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5131fd4774/CurrencyAddEquipmentSocket.png",
+      "category": "Currency",
+      "detailsId": "artificers-orb"
+    },
+    {
+      "id": "aug",
+      "name": "Orb of Augmentation",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb01hZ2ljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c8ad0ddc84/CurrencyAddModToMagic.png",
+      "category": "Currency",
+      "detailsId": "orb-of-augmentation"
+    },
+    {
+      "id": "bauble",
+      "name": "Glassblower's Bauble",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lGbGFza1F1YWxpdHkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/1cec279e01/CurrencyFlaskQuality.png",
+      "category": "Currency",
+      "detailsId": "glassblowers-bauble"
+    },
+    {
+      "id": "chance",
+      "name": "Orb of Chance",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9VbmlxdWUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/93c6cc8d5b/CurrencyUpgradeToUnique.png",
+      "category": "Currency",
+      "detailsId": "orb-of-chance"
+    },
+    {
+      "id": "core-destabiliser",
+      "name": "Core Destabiliser",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkNvcmVEZXN0YWJsaXNlciIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/e613c14ed7/IncursionCoreDestabliser.png",
+      "category": "Vaal",
+      "detailsId": "core-destabiliser"
+    },
+    {
+      "id": "crystallised-corruption",
+      "name": "Crystallised Corruption",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkNyeXN0YWxsaXNlZENvcnJ1cHRpb24iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7bb759396f/IncursionCrystallisedCorruption.png",
+      "category": "Vaal",
+      "detailsId": "crystallised-corruption"
+    },
+    {
+      "id": "etcher",
+      "name": "Arcanist's Etcher",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lXZWFwb25NYWdpY1F1YWxpdHkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/516e8f1131/CurrencyWeaponMagicQuality.png",
+      "category": "Currency",
+      "detailsId": "arcanists-etcher"
+    },
+    {
+      "id": "fracturing-orb",
+      "name": "Fracturing Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRnJhY3R1cmluZ09yYiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/8b85ed1dc2/FracturingOrb.png",
+      "category": "Currency",
+      "detailsId": "fracturing-orb"
+    },
+    {
+      "id": "greater-regal-orb",
+      "name": "Greater Regal Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlTWFnaWNUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e8fb148e80/CurrencyUpgradeMagicToRare.png",
+      "category": "Currency",
+      "detailsId": "greater-regal-orb"
+    },
+    {
+      "id": "kopecs-orb-of-sacrifice",
+      "name": "Kopec's Orb of Sacrifice",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkNvcnJ1cHRpb25PcmIyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/911b28ea18/IncursionCorruptionOrb2.png",
+      "category": "Vaal",
+      "detailsId": "kopecs-orb-of-sacrifice"
+    },
+    {
+      "id": "lesser-jewellers-orb",
+      "name": "Lesser Jeweller's Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXROdW1iZXJzMDEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/b0b9a43ed8/CurrencyRerollSocketNumbers01.png",
+      "category": "Currency",
+      "detailsId": "lesser-jewellers-orb"
+    },
+    {
+      "id": "perfect-chaos-orb",
+      "name": "Perfect Chaos Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "category": "Currency",
+      "detailsId": "perfect-chaos-orb"
+    },
+    {
+      "id": "perfect-exalted-orb",
+      "name": "Perfect Exalted Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+      "category": "Currency",
+      "detailsId": "perfect-exalted-orb"
+    },
+    {
+      "id": "perfect-jewellers-orb",
+      "name": "Perfect Jeweller's Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXROdW1iZXJzMDMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ac6398e6a0/CurrencyRerollSocketNumbers03.png",
+      "category": "Currency",
+      "detailsId": "perfect-jewellers-orb"
+    },
+    {
+      "id": "perfect-regal-orb",
+      "name": "Perfect Regal Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlTWFnaWNUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e8fb148e80/CurrencyUpgradeMagicToRare.png",
+      "category": "Currency",
+      "detailsId": "perfect-regal-orb"
+    },
+    {
+      "id": "regal",
+      "name": "Regal Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlTWFnaWNUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/e8fb148e80/CurrencyUpgradeMagicToRare.png",
+      "category": "Currency",
+      "detailsId": "regal-orb"
+    },
+    {
+      "id": "scrap",
+      "name": "Armourer's Scrap",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBcm1vdXJRdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d5868f596d/CurrencyArmourQuality.png",
+      "category": "Currency",
+      "detailsId": "armourers-scrap"
+    },
+    {
+      "id": "vaal-arcanists-infuser",
+      "name": "Vaal Arcanist's Infuser",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL1ZhYWxBcmNhbmlzdHNFdGNoZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/3eb344ecc5/VaalArcanistsEtcher.png",
+      "category": "Vaal",
+      "detailsId": "vaal-arcanists-infuser"
+    },
+    {
+      "id": "vaal-armourers-infuser",
+      "name": "Vaal Armourer's Infuser",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL1ZhYWtBcm1vdXJlcnNTY3JhcCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/f9e1c7e389/VaakArmourersScrap.png",
+      "category": "Vaal",
+      "detailsId": "vaal-armourers-infuser"
+    },
+    {
+      "id": "vaal-blacksmiths-infuser",
+      "name": "Vaal Blacksmith's Infuser",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL1ZhYWxCbGFja3NtaXRoc1doZXRzdG9uZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/193a2f8085/VaalBlacksmithsWhetstone.png",
+      "category": "Vaal",
+      "detailsId": "vaal-blacksmiths-infuser"
+    },
+    {
+      "id": "vaal-cultivation-orb",
+      "name": "Vaal Cultivation Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkhpc3RvcmljVmFhbE9yYiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/07d4d75931/IncursionHistoricVaalOrb.png",
+      "category": "Vaal",
+      "detailsId": "vaal-cultivation-orb"
+    },
+    {
+      "id": "cryptic-key",
+      "name": "Cryptic Key",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU3Ryb25nYm94U2tlbGV0b25LZXkiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ae08d02326/StrongboxSkeletonKey.png",
+      "category": "Currency",
+      "detailsId": "cryptic-key"
+    },
+    {
+      "id": "hinekoras-lock",
+      "name": "Hinekora's Lock",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSGluZWtvcmFzTG9jayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ab2163ae06/HinekorasLock.png",
+      "category": "Currency",
+      "detailsId": "hinekoras-lock"
+    },
+    {
+      "id": "artificers-shard",
+      "name": "Artificer's Shard",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRFcXVpcG1lbnRTb2NrZXRTaGFyZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/cdcdd8bf3f/CurrencyAddEquipmentSocketShard.png",
+      "category": "Currency",
+      "detailsId": "artificers-shard"
+    },
+    {
+      "id": "chance-shard",
+      "name": "Chance Shard",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9VbmlxdWVTaGFyZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9828a70270/CurrencyUpgradeToUniqueShard.png",
+      "category": "Currency",
+      "detailsId": "chance-shard"
+    },
+    {
+      "id": "gcp",
+      "name": "Gemcutter's Prism",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lHZW1RdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/f4bace18d7/CurrencyGemQuality.png",
+      "category": "Currency",
+      "detailsId": "gemcutters-prism"
+    },
+    {
+      "id": "greater-chaos-orb",
+      "name": "Greater Chaos Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+      "category": "Currency",
+      "detailsId": "greater-chaos-orb"
+    },
+    {
+      "id": "greater-exalted-orb",
+      "name": "Greater Exalted Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+      "category": "Currency",
+      "detailsId": "greater-exalted-orb"
+    },
+    {
+      "id": "greater-jewellers-orb",
+      "name": "Greater Jeweller's Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxTb2NrZXROdW1iZXJzMDIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7dd6ee75be/CurrencyRerollSocketNumbers02.png",
+      "category": "Currency",
+      "detailsId": "greater-jewellers-orb"
+    },
+    {
+      "id": "greater-orb-of-augmentation",
+      "name": "Greater Orb of Augmentation",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb01hZ2ljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c8ad0ddc84/CurrencyAddModToMagic.png",
+      "category": "Currency",
+      "detailsId": "greater-orb-of-augmentation"
+    },
+    {
+      "id": "greater-orb-of-transmutation",
+      "name": "Greater Orb of Transmutation",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9NYWdpYyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2f8e1ff9f8/CurrencyUpgradeToMagic.png",
+      "category": "Currency",
+      "detailsId": "greater-orb-of-transmutation"
+    },
+    {
+      "id": "kamasas-orb-of-sacrifice",
+      "name": "Kamasa's Orb of Sacrifice",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkNvcnJ1cHRpb25PcmIzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/00e0cd1060/IncursionCorruptionOrb3.png",
+      "category": "Vaal",
+      "detailsId": "kamasas-orb-of-sacrifice"
+    },
+    {
+      "id": "mirror",
+      "name": "Mirror of Kalandra",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lEdXBsaWNhdGUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/26bc31680e/CurrencyDuplicate.png",
+      "category": "Currency",
+      "detailsId": "mirror-of-kalandra"
+    },
+    {
+      "id": "orb-of-extraction",
+      "name": "Orb of Extraction",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvblNvY2tldGFibGVFeHRyYWN0b3JDdXJyZW5jeSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dae9dfbb5e/IncursionSocketableExtractorCurrency.png",
+      "category": "Vaal",
+      "detailsId": "orb-of-extraction"
+    },
+    {
+      "id": "perfect-orb-of-augmentation",
+      "name": "Perfect Orb of Augmentation",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb01hZ2ljIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c8ad0ddc84/CurrencyAddModToMagic.png",
+      "category": "Currency",
+      "detailsId": "perfect-orb-of-augmentation"
+    },
+    {
+      "id": "perfect-orb-of-transmutation",
+      "name": "Perfect Orb of Transmutation",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9NYWdpYyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2f8e1ff9f8/CurrencyUpgradeToMagic.png",
+      "category": "Currency",
+      "detailsId": "perfect-orb-of-transmutation"
+    },
+    {
+      "id": "transmute",
+      "name": "Orb of Transmutation",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lVcGdyYWRlVG9NYWdpYyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2f8e1ff9f8/CurrencyUpgradeToMagic.png",
+      "category": "Currency",
+      "detailsId": "orb-of-transmutation"
+    },
+    {
+      "id": "vaal-catalysing-infuser",
+      "name": "Vaal Catalysing Infuser",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL1ZhYWxDYXRhbHlzdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/1c9f7be28c/VaalCatalyst.png",
+      "category": "Vaal",
+      "detailsId": "vaal-catalysing-infuser"
+    },
+    {
+      "id": "vaal",
+      "name": "Vaal Orb",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lWYWFsIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/72bc84396c/CurrencyVaal.png",
+      "category": "Currency",
+      "detailsId": "vaal-orb"
+    },
+    {
+      "id": "vaal-siphoner",
+      "name": "Vaal Siphoner",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvblZhYWxTaXBob25lciIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/070fd020d7/IncursionVaalSiphoner.png",
+      "category": "Vaal",
+      "detailsId": "vaal-siphoner"
+    },
+    {
+      "id": "whetstone",
+      "name": "Blacksmith's Whetstone",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lXZWFwb25RdWFsaXR5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/18715ea7be/CurrencyWeaponQuality.png",
+      "category": "Currency",
+      "detailsId": "blacksmiths-whetstone"
+    },
+    {
+      "id": "wisdom",
+      "name": "Scroll of Wisdom",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lJZGVudGlmaWNhdGlvbiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/884f7bc58b/CurrencyIdentification.png",
+      "category": "Currency",
+      "detailsId": "scroll-of-wisdom"
+    },
+    {
+      "id": "yaomacs-orb-of-sacrifice",
+      "name": "Yaomac's Orb of Sacrifice",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkNvcnJ1cHRpb25PcmIxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d8bf3af5d5/IncursionCorruptionOrb1.png",
+      "category": "Vaal",
+      "detailsId": "yaomacs-orb-of-sacrifice"
+    },
+    {
+      "id": "yuguls-orb-of-sacrifice",
+      "name": "Yugul's Orb of Sacrifice",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvSW5jdXJzaW9uQ3JhZnRpbmdPcmJzL0luY3Vyc2lvbkNvcnJ1cHRpb25PcmI0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5102a7c2f5/IncursionCorruptionOrb4.png",
+      "category": "Vaal",
+      "detailsId": "yuguls-orb-of-sacrifice"
+    }
+  ]
+}
