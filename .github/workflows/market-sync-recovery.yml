@@ -1,0 +1,47 @@
+name: Economy Radar Market Sync Recovery
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: economy-radar-market-sync
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    environment: MARKET_SYNC_WEBHOOK_SECRET
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Select latest ready snapshot
+        run: |
+          python3 - <<'PY' >> "$GITHUB_ENV"
+          import json
+          from pathlib import Path
+          for folder in sorted(Path("data/snapshots").glob("??????_??"), reverse=True):
+              manifest_path = folder / "_manifest.json"
+              if not manifest_path.exists():
+                  continue
+              manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+              if int((manifest.get("pair_books") or {}).get("total") or 0) > 0:
+                  print(f"SNAPSHOT_DIR={folder.as_posix()}")
+                  break
+          else:
+              raise SystemExit("No ready snapshot found")
+          PY
+      - name: Resume market sync
+        env:
+          MARKET_SYNC_WEBHOOK_URL: ${{ vars.MARKET_SYNC_WEBHOOK_URL }}
+          MARKET_SYNC_WEBHOOK_SECRET: ${{ secrets.MARKET_SYNC_WEBHOOK_SECRET }}
+        run: python3 scripts/sync_market_snapshot.py --snapshot-dir "$SNAPSHOT_DIR"
