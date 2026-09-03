@@ -68,6 +68,9 @@ def snapshot_payload(folder, commit_sha=None):
 
 
 def sync_snapshot(base_url, secret, payload, request_fn=post_json):
+    base_url = base_url.rstrip("/")
+    if base_url.endswith("/internal/market/snapshot-ready"):
+        base_url = base_url.removesuffix("/internal/market/snapshot-ready")
     registration = request_fn(base_url, "/internal/market/snapshot-ready", payload, secret)
     if registration.get("status") == "CURRENT":
         print(f"snapshot={payload['snapshot_folder']} already CURRENT")

@@ -41,6 +41,16 @@ class MarketSyncTests(unittest.TestCase):
             "completed_at": "2026-09-03T05:27:53Z", "pair_books_total": 10}, request)
         self.assertEqual(calls, ["/internal/market/snapshot-ready"])
 
+    def test_legacy_full_webhook_url_is_normalized(self):
+        bases = []
+        def request(url, endpoint, payload, secret):
+            bases.append(url)
+            return {"status": "CURRENT", "sync_id": "b" * 16}
+        sync_snapshot("https://example.test/internal/market/snapshot-ready", "secret", {
+            "snapshot_folder": "030926_05", "commit_sha": "abcdef1",
+            "completed_at": "2026-09-03T05:27:53Z", "pair_books_total": 10}, request)
+        self.assertEqual(bases, ["https://example.test"])
+
 
 if __name__ == "__main__":
     unittest.main()
