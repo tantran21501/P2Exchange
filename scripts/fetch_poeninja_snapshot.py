@@ -701,7 +701,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--api-base", default=os.getenv("NINJA_API_BASE", DEFAULT_API_BASE))
-    parser.add_argument("--league", default=os.getenv("NINJA_LEAGUE", ""))
+    parser.add_argument("--league", default=os.getenv("NINJA_LEAGUE", "Forbidden Rites"))
     parser.add_argument("--league-name", default=os.getenv("NINJA_LEAGUE_NAME", ""))
     parser.add_argument(
         "--categories",
@@ -729,6 +729,8 @@ def main(argv: list[str] | None = None) -> int:
     leagues = fetch_leagues(client)
     league = select_league(leagues, requested_league(args, rewards_doc))
     selected_league = league_value(league)
+    if selected_league != "Forbidden Rites":
+        raise ValueError("Only Forbidden Rites softcore is enabled")
     print(f"[INFO] League: {selected_league}", file=sys.stderr)
 
     overviews_by_category: dict[str, dict[str, Any]] = {}

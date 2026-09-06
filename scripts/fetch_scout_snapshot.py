@@ -554,7 +554,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--api-base", default=os.getenv("SCOUT_API_BASE", DEFAULT_API_BASE))
     parser.add_argument("--realm", default=os.getenv("SCOUT_REALM", DEFAULT_REALM))
-    parser.add_argument("--league", default=os.getenv("SCOUT_LEAGUE", DEFAULT_LEAGUE))
+    parser.add_argument("--league", default=os.getenv("SCOUT_LEAGUE", "Forbidden Rites"))
     parser.add_argument("--user-agent", default=os.getenv("SCOUT_USER_AGENT", DEFAULT_USER_AGENT))
     parser.add_argument(
         "--reference-currencies",
@@ -596,6 +596,8 @@ def main(argv: list[str] | None = None) -> int:
         raise ScoutApiError("POE2 Scout leagues response is not an array")
     league = select_league(leagues_payload, requested_league)
     selected_league = league_value(league)
+    if selected_league != "Forbidden Rites":
+        raise ValueError("Only Forbidden Rites softcore is enabled")
     print(f"[INFO] League: {selected_league}", file=sys.stderr)
 
     categories_payload = client.get_json(args.realm, "Leagues", selected_league, "Items", "Categories")

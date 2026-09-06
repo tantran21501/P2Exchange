@@ -61,7 +61,7 @@ export async function dispatchWorkflow(
     },
     body: JSON.stringify({
       ref: required(env.GITHUB_REF, "GITHUB_REF"),
-      inputs: {},
+      inputs: { league: "Forbidden Rites" },
       return_run_details: true,
     }),
   });

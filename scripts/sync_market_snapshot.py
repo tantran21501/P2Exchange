@@ -43,7 +43,7 @@ def post_json(base_url, endpoint, payload, secret, opener=urlopen, sleeper=time.
             ray = exc.headers.get("cf-ray", "-")
             error_type = exc.headers.get("cf-error-type", "-")
             retryable = exc.code == 429 or exc.code >= 500
-            print(f"HTTP {exc.code} endpoint={endpoint} cf-ray={ray} cf-error-type={error_type} detail={detail}")
+            print(f"category={payload.get('category', '-')} part={payload.get('index', '-')} HTTP {exc.code} endpoint={endpoint} cf-ray={ray} cf-error-type={error_type} detail={detail}")
             if not retryable or attempt == len(RETRY_DELAYS):
                 raise RuntimeError(f"Webhook HTTP {exc.code}: {detail}") from exc
         except (URLError, TimeoutError) as exc:
@@ -94,11 +94,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--snapshot-dir", required=True, type=Path)
     parser.add_argument("--url", default=os.environ.get("MARKET_SYNC_WEBHOOK_URL", ""))
-    parser.add_argument("--secret", default=os.environ.get("MARKET_SYNC_WEBHOOK_SECRET", ""))
+    parser.add_argument("--secret", default=os.environ.get("MARKET_COMPACT_WEBHOOK_SECRET", "") or os.environ.get("MARKET_SYNC_WEBHOOK_SECRET", ""))
+    parser.add_argument("--legacy", action="store_true", help="Use the pre-compact transport during rollback")
     args = parser.parse_args()
     if not args.url.strip() or not args.secret:
         raise SystemExit("Market sync webhook URL/secret is not configured")
-    sync_snapshot(args.url.strip(), args.secret, snapshot_payload(args.snapshot_dir))
+    payload = snapshot_payload(args.snapshot_dir)
+    if args.legacy:
+        sync_snapshot(args.url.strip(), args.secret, payload)
+    else:
+        from prepare_market_compact import prepare, upload
+        upload(args.url.strip(), args.secret, payload, prepare(args.snapshot_dir, CATEGORIES), post_json)
 
 
 if __name__ == "__main__":

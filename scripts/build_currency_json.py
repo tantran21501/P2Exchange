@@ -27,6 +27,7 @@ def build_currency_payload(snapshot: dict[str, Any]) -> dict[str, list[dict[str,
         raise ValueError("Input snapshot must contain a rewards array")
 
     return {
+        **({"league": snapshot["league"]} if "league" in snapshot else {}),
         "rewards": [
             {field: reward.get(field) for field in OUTPUT_FIELDS}
             for reward in rewards

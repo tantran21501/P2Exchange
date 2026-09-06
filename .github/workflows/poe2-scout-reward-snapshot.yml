@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       league:
-        description: 'POE2 Scout league name, for example "Runes of Aldur"'
+        description: 'POE2 Scout league name, for example "Forbidden Rites"'
         required: false
         type: string
         default: ""
@@ -38,7 +38,7 @@ jobs:
 
       - name: Fetch POE2 Scout reward snapshot
         env:
-          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'current' }}
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'Forbidden Rites' }}
           SCOUT_REFERENCE_CURRENCIES: "exalted,divine"
           SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'P2Exchange-POE2ScoutRewardSnapshot/1.0 (github-actions)' }}
           SCOUT_TIMEOUT: "30"

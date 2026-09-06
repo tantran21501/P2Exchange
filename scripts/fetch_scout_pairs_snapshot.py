@@ -163,7 +163,12 @@ def compact_pairs(raw_pairs: Any, documents: dict[str, dict[str, Any]], observed
     return result
 
 
-def write_pairs(snapshot_dir: Path, raw_pairs: Any, observed_at: str) -> dict[str, int]:
+def write_pairs(snapshot_dir: Path, raw_pairs: Any, observed_at: str, league: str | None = None) -> dict[str, int]:
+    if league is not None:
+        from prepare_market_compact import league_value
+        source = json.loads((snapshot_dir / "_manifest.json").read_text(encoding="utf-8"))
+        if league != "Forbidden Rites" or league_value(source.get("league")) != league:
+            raise ValueError("poe.ninja and Scout league mismatch; refusing to modify snapshots")
     documents = load_documents(snapshot_dir)
     by_category = compact_pairs(raw_pairs, documents, observed_at)
     counts: dict[str, int] = {}
@@ -175,6 +180,7 @@ def write_pairs(snapshot_dir: Path, raw_pairs: Any, observed_at: str) -> dict[st
     manifest_path = snapshot_dir / "_manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {}
     manifest["pair_books"] = {
+        "league": league,
         "source": "poe2scout-snapshot-pairs",
         "observed_at": observed_at,
         "categories": counts,
@@ -188,7 +194,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Add compact POE2 Scout pair books to an hourly snapshot.")
     parser.add_argument("--snapshots-dir", type=Path, default=DEFAULT_SNAPSHOTS_DIR)
     parser.add_argument("--snapshot-time", default=os.getenv("PAIR_SNAPSHOT_TIME", ""))
-    parser.add_argument("--league", default=os.getenv("SCOUT_LEAGUE", "current"))
+    parser.add_argument("--league", default=os.getenv("SCOUT_LEAGUE", "Forbidden Rites"))
     parser.add_argument("--api-base", default=os.getenv("SCOUT_API_BASE", scout.DEFAULT_API_BASE))
     parser.add_argument("--realm", default=os.getenv("SCOUT_REALM", scout.DEFAULT_REALM))
     parser.add_argument("--user-agent", default=os.getenv("SCOUT_USER_AGENT", DEFAULT_USER_AGENT))
@@ -204,9 +210,11 @@ def main(argv: list[str] | None = None) -> int:
     leagues = client.get_json(args.realm, "Leagues")
     league = scout.select_league(leagues, args.league)
     league_name = scout.league_value(league)
+    if league_name != "Forbidden Rites":
+        raise ValueError("Only Forbidden Rites softcore is enabled")
     raw_pairs = client.get_json(args.realm, "Leagues", league_name, "SnapshotPairs")
     target = args.snapshots_dir / snapshot_folder(timestamp)
-    counts = write_pairs(target, raw_pairs, iso(timestamp))
+    counts = write_pairs(target, raw_pairs, iso(timestamp), league_name)
     print(f"[OK] wrote {sum(counts.values())} compact directed pair books to {target}", file=sys.stderr)
     return 0
 

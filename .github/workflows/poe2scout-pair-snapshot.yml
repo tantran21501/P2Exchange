@@ -3,8 +3,13 @@ name: POE2 Scout Pair Snapshot
 on:
   workflow_dispatch:
     inputs:
+      market_target:
+        description: 'Market destination for staging verification'
+        type: choice
+        options: [production, staging]
+        default: production
       league:
-        description: 'POE2 Scout league name; empty selects current softcore'
+        description: 'POE2 Scout league name; Forbidden Rites softcore'
         required: false
         type: string
         default: ""
@@ -13,14 +18,14 @@ permissions:
   contents: write
 
 concurrency:
-  group: poe2scout-pair-snapshot
+  group: economy-radar-market-sync
   cancel-in-progress: false
 
 jobs:
   snapshot:
     environment: MARKET_SYNC_WEBHOOK_SECRET
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,7 +47,7 @@ jobs:
           PY
       - name: Fetch and compact POE2 Scout pair books
         env:
-          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'current' }}
+          SCOUT_LEAGUE: ${{ inputs.league || vars.SCOUT_LEAGUE || 'Forbidden Rites' }}
           SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'P2Exchange-POE2ScoutPairSnapshot/1.0 (github-actions)' }}
           SCOUT_TIMEOUT: "30"
           SCOUT_RETRIES: "4"
@@ -84,6 +89,6 @@ jobs:
       - name: Notify Economy Radar market sync
         if: success()
         env:
-          MARKET_SYNC_WEBHOOK_URL: ${{ vars.MARKET_SYNC_WEBHOOK_URL }}
-          MARKET_SYNC_WEBHOOK_SECRET: ${{ secrets.MARKET_SYNC_WEBHOOK_SECRET }}
+          MARKET_SYNC_WEBHOOK_URL: ${{ inputs.market_target == 'staging' && 'https://poe2-license-api-staging.tantnlamma.workers.dev' || vars.MARKET_SYNC_WEBHOOK_URL }}
+          MARKET_COMPACT_WEBHOOK_SECRET: ${{ inputs.market_target == 'staging' && secrets.STAGING_MARKET_COMPACT_WEBHOOK_SECRET || secrets.MARKET_COMPACT_WEBHOOK_SECRET }}
         run: python3 scripts/sync_market_snapshot.py --snapshot-dir "$SNAPSHOT_DIR"
