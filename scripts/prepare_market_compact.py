@@ -101,6 +101,10 @@ def upload(base_url, secret, payload, bundles, request_fn):
                 request_fn(base_url, "/internal/market/compact-part", {
                     **category_payload, "kind": kind, "index": index, "count": len(chunks),
                     "data": chunk, "sha256": hashlib.sha256(chunk.encode("ascii")).hexdigest()}, secret)
+        points = json.loads(documents.get("history", '{"points":[]}'))["points"]
+        if points:
+            category_payload.update({"history_point_count": len(points),
+                                     "oldest_history_at": min(p["snapshot_at"] for p in points)})
         staged = request_fn(base_url, "/internal/market/compact-category", category_payload, secret)
         print(f"category={category} progress={staged['completed_category_count']}/{len(bundles)} staged")
     result = request_fn(base_url, "/internal/market/compact-finalize", payload, secret)
