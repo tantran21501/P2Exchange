@@ -65,7 +65,7 @@ describe("dispatchWorkflow", () => {
     expect(init.method).toBe("POST");
     expect(init.body).toBe(JSON.stringify({
       ref: "main",
-      inputs: {},
+      inputs: { league: "Forbidden Rites" },
       return_run_details: true,
     }));
 

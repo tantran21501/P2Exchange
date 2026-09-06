@@ -19,7 +19,7 @@ describe("pair workflow scheduler", () => {
     expect(fetcher).toHaveBeenCalledTimes(1);
     const [url, init] = fetcher.mock.calls[0] as [string, RequestInit];
     expect(url).toBe(workflowDispatchUrl(env()));
-    expect(init.body).toBe(JSON.stringify({ ref: "main", inputs: {} }));
+    expect(init.body).toBe(JSON.stringify({ ref: "main", inputs: { league: "Forbidden Rites" } }));
     expect((init.headers as Record<string, string>).Authorization).toBe("Bearer github_pat_test");
     expect(log.mock.calls.flat().join(" ")).not.toContain("github_pat_test");
     log.mockRestore();

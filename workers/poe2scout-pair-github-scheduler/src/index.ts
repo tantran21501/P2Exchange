@@ -31,7 +31,7 @@ export async function dispatchPairWorkflow(env: Env, fetcher: typeof fetch = fet
       "User-Agent": "P2Exchange-POE2ScoutPairScheduler/1.0 (cloudflare-worker)",
       "X-GitHub-Api-Version": GITHUB_API_VERSION,
     },
-    body: JSON.stringify({ ref: required(env.GITHUB_REF, "GITHUB_REF"), inputs: {} }),
+    body: JSON.stringify({ ref: required(env.GITHUB_REF, "GITHUB_REF"), inputs: { league: "Forbidden Rites" } }),
   });
   if (!response.ok) {
     const detail = (await response.text()).trim() || response.statusText;

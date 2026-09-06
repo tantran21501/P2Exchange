@@ -16,7 +16,7 @@ jobs:
   recover:
     environment: MARKET_SYNC_WEBHOOK_SECRET
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,11 +29,19 @@ jobs:
           python3 - <<'PY' >> "$GITHUB_ENV"
           import json
           from pathlib import Path
-          for folder in sorted(Path("data/snapshots").glob("??????_??"), reverse=True):
+          from datetime import datetime
+          import sys
+          sys.path.insert(0, "scripts")
+          from prepare_market_compact import validate_manifest
+          for folder in sorted(Path("data/snapshots").glob("??????_??"), key=lambda p: datetime.strptime(p.name, "%d%m%y_%H"), reverse=True):
               manifest_path = folder / "_manifest.json"
               if not manifest_path.exists():
                   continue
               manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+              try:
+                  validate_manifest(manifest)
+              except ValueError:
+                  continue
               if int((manifest.get("pair_books") or {}).get("total") or 0) > 0:
                   print(f"SNAPSHOT_DIR={folder.as_posix()}")
                   break
@@ -43,5 +51,5 @@ jobs:
       - name: Resume market sync
         env:
           MARKET_SYNC_WEBHOOK_URL: ${{ vars.MARKET_SYNC_WEBHOOK_URL }}
-          MARKET_SYNC_WEBHOOK_SECRET: ${{ secrets.MARKET_SYNC_WEBHOOK_SECRET }}
+          MARKET_COMPACT_WEBHOOK_SECRET: ${{ secrets.MARKET_COMPACT_WEBHOOK_SECRET }}
         run: python3 scripts/sync_market_snapshot.py --snapshot-dir "$SNAPSHOT_DIR"

@@ -3,12 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       league:
-        description: 'poe.ninja league id, for example "Runes of Aldur"'
+        description: 'poe.ninja league id, for example "Forbidden Rites"'
         required: false
         type: string
         default: ""
       league_name:
-        description: 'poe.ninja league name fallback, for example "Runes of Aldur"'
+        description: 'poe.ninja league name fallback, for example "Forbidden Rites"'
         required: false
         type: string
         default: ""
@@ -56,7 +56,7 @@ jobs:
 
       - name: Fetch poe.ninja full category snapshot
         env:
-          NINJA_LEAGUE: ${{ inputs.league || vars.NINJA_LEAGUE || '' }}
+          NINJA_LEAGUE: ${{ inputs.league || vars.NINJA_LEAGUE || 'Forbidden Rites' }}
           NINJA_LEAGUE_NAME: ${{ inputs.league_name || vars.NINJA_LEAGUE_NAME || '' }}
           NINJA_CATEGORIES: ${{ inputs.categories || vars.NINJA_CATEGORIES || 'Currency,Fragments,Abyss,UncutGems,LineageSupportGems,Essences,SoulCores,Idols,Runes,Ritual,Expedition,Delirium,Breach,Verisium' }}
           NINJA_USER_AGENT: ${{ vars.NINJA_USER_AGENT || 'P2Exchange-POENinjaFullCategorySnapshot/1.0 (github-actions)' }}
