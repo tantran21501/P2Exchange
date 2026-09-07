@@ -95,8 +95,8 @@ jobs:
           with open("data/currency.json", encoding="utf-8") as handle:
               data = json.load(handle)
 
-          if list(data) != ["rewards"]:
-              raise SystemExit("currency.json must only contain the rewards array")
+          if data.get("league") != "Forbidden Rites":
+              raise SystemExit("currency.json league must be Forbidden Rites")
 
           rewards = data["rewards"]
           if not isinstance(rewards, list) or not rewards:

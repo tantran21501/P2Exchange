@@ -8,6 +8,7 @@ from market_transform import (normalize_market_document, merge_market_documents,
 
 LEAGUE = "Forbidden Rites"
 PART_BYTES = 128 * 1024
+LIMITS = {"current": 2 * 1024 * 1024, "history": 8 * 1024 * 1024}
 
 
 def read(path):
@@ -76,7 +77,7 @@ def prepare(folder, categories):
         encoded = {"current": json.dumps(bundle, separators=(",", ":"), sort_keys=True, allow_nan=False),
                    "history": json.dumps(history, separators=(",", ":"), sort_keys=True, allow_nan=False)}
         for kind, content in encoded.items():
-            limit = (2 if kind == "current" else 1) * 1024 * 1024
+            limit = LIMITS[kind]
             if len(content) > limit:
                 raise ValueError(f"{category}/{kind} exceeds {limit} byte safety limit")
         result[category] = encoded
