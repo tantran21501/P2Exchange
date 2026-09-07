@@ -7,7 +7,7 @@ from market_transform import (normalize_market_document, merge_market_documents,
                               _folder_time, _market_quote_observed_at, compact_history)
 
 LEAGUE = "Forbidden Rites"
-PART_BYTES = 1024 * 1024
+PART_BYTES = 512 * 1024
 LIMITS = {"current": 2 * 1024 * 1024, "history": 8 * 1024 * 1024}
 
 

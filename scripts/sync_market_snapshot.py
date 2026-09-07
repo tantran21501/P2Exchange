@@ -7,6 +7,7 @@ import os
 import secrets
 import subprocess
 import time
+from http.client import HTTPSConnection
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
@@ -65,6 +66,59 @@ def post_raw_part(base_url, endpoint, metadata, chunk, secret, opener=urlopen, s
                       opener=opener, sleeper=sleeper)
 
 
+class WebhookClient:
+    def __init__(self, base_url, secret, sleeper=time.sleep):
+        self.base_url = base_url.rstrip("/").removesuffix("/internal/market/snapshot-ready")
+        self.secret = secret
+        self.sleeper = sleeper
+        self.parsed = urlsplit(self.base_url)
+        if self.parsed.scheme != "https" or not self.parsed.netloc:
+            raise ValueError("Market sync webhook URL must be an HTTPS origin")
+        self.connection = None
+
+    def close(self):
+        if self.connection is not None:
+            self.connection.close()
+            self.connection = None
+
+    def _connection(self):
+        if self.connection is None:
+            self.connection = HTTPSConnection(self.parsed.netloc, timeout=60)
+        return self.connection
+
+    def post_bytes(self, endpoint, body, log_payload=None, content_type="application/json"):
+        log_payload = log_payload or {}
+        path = (self.parsed.path.rstrip("/") + endpoint) if self.parsed.path else endpoint
+        for attempt in range(len(RETRY_DELAYS) + 1):
+            headers = signed_headers(self.secret, path, body, content_type=content_type)
+            try:
+                connection = self._connection()
+                connection.request("POST", path, body=body, headers=headers)
+                response = connection.getresponse()
+                detail = response.read().decode(errors="replace")
+                if 200 <= response.status < 300:
+                    return json.loads(detail)
+                retryable = response.status == 429 or response.status >= 500
+                print(f"category={log_payload.get('category', '-')} part={log_payload.get('index', '-')} HTTP {response.status} endpoint={endpoint} cf-ray={response.getheader('cf-ray', '-')} cf-error-type={response.getheader('cf-error-type', '-')} detail={detail[:500]}")
+                self.close()
+                if not retryable or attempt == len(RETRY_DELAYS):
+                    raise RuntimeError(f"Webhook HTTP {response.status}: {detail[:500]}")
+            except (OSError, TimeoutError) as exc:
+                self.close()
+                print(f"Network error endpoint={endpoint}: {exc}")
+                if attempt == len(RETRY_DELAYS):
+                    raise
+            self.sleeper(RETRY_DELAYS[attempt])
+
+    def post_json(self, base_url, endpoint, payload, secret):
+        body = json.dumps(payload, separators=(",", ":")).encode()
+        return self.post_bytes(endpoint, body, payload)
+
+    def post_raw_part(self, base_url, endpoint, metadata, chunk, secret):
+        body = json.dumps(metadata, separators=(",", ":")).encode() + b"\n" + chunk.encode("ascii")
+        return self.post_bytes(endpoint, body, metadata, "application/octet-stream")
+
+
 def snapshot_payload(folder, commit_sha=None):
     manifest = json.loads((folder / "_manifest.json").read_text(encoding="utf-8"))
     pair_books = manifest.get("pair_books") or {}
@@ -116,7 +170,12 @@ def main():
         sync_snapshot(args.url.strip(), args.secret, payload)
     else:
         from prepare_market_compact import prepare, upload
-        upload(args.url.strip(), args.secret, payload, prepare(args.snapshot_dir, CATEGORIES), post_json, post_raw_part)
+        client = WebhookClient(args.url.strip(), args.secret)
+        try:
+            upload(args.url.strip(), args.secret, payload, prepare(args.snapshot_dir, CATEGORIES),
+                   client.post_json, client.post_raw_part)
+        finally:
+            client.close()
 
 
 if __name__ == "__main__":
