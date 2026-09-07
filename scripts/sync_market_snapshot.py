@@ -120,16 +120,19 @@ class WebhookClient:
 
 
 def snapshot_payload(folder, commit_sha=None):
-    manifest = json.loads((folder / "_manifest.json").read_text(encoding="utf-8"))
+    manifest_path = folder / "_manifest.json"
+    manifest_bytes = manifest_path.read_bytes()
+    manifest = json.loads(manifest_bytes.decode("utf-8"))
     pair_books = manifest.get("pair_books") or {}
     total = int(pair_books.get("total") or 0)
     if total <= 0 or not pair_books.get("observed_at"):
         raise ValueError("Snapshot pair books are not ready")
     if commit_sha is None:
         commit_sha = subprocess.check_output(
-            ["git", "log", "-1", "--format=%H", "--", str(folder / "_manifest.json")],
+            ["git", "log", "-1", "--format=%H", "--", str(manifest_path)],
             text=True).strip()
     return {"snapshot_folder": folder.name, "commit_sha": commit_sha,
+            "manifest_sha256": hashlib.sha256(manifest_bytes).hexdigest(),
             "completed_at": pair_books["observed_at"], "pair_books_total": total}
 
 

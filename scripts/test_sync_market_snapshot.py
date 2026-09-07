@@ -1,8 +1,11 @@
 import hashlib
 import hmac
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
-from sync_market_snapshot import CATEGORIES, signed_headers, sync_snapshot
+from sync_market_snapshot import CATEGORIES, signed_headers, snapshot_payload, sync_snapshot
 
 
 class MarketSyncTests(unittest.TestCase):
@@ -50,6 +53,17 @@ class MarketSyncTests(unittest.TestCase):
             "snapshot_folder": "030926_05", "commit_sha": "abcdef1",
             "completed_at": "2026-09-03T05:27:53Z", "pair_books_total": 10}, request)
         self.assertEqual(bases, ["https://example.test"])
+
+    def test_snapshot_payload_includes_manifest_checksum(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp) / "030926_05"
+            folder.mkdir()
+            manifest = {"pair_books": {"observed_at": "2026-09-03T05:27:53Z", "total": 10}}
+            manifest_bytes = json.dumps(manifest, separators=(",", ":")).encode()
+            (folder / "_manifest.json").write_bytes(manifest_bytes)
+            payload = snapshot_payload(folder, "abcdef1")
+            self.assertEqual(payload["manifest_sha256"], hashlib.sha256(manifest_bytes).hexdigest())
+            self.assertEqual(payload["completed_at"], "2026-09-03T05:27:53Z")
 
 
 if __name__ == "__main__":
