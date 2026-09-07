@@ -18,23 +18,24 @@ CATEGORIES = ("Abyss", "Breach", "Currency", "Delirium", "Essences", "Expedition
 RETRY_DELAYS = (10, 20, 40)
 
 
-def signed_headers(secret, path, body, timestamp=None, nonce=None):
+def signed_headers(secret, path, body, timestamp=None, nonce=None, content_type="application/json"):
     timestamp = timestamp or str(int(time.time()))
     nonce = nonce or secrets.token_hex(24)
     body_hash = hashlib.sha256(body).hexdigest()
     canonical = "\n".join(("POST", path, timestamp, nonce, body_hash))
     signature = hmac.new(secret.encode(), canonical.encode(), hashlib.sha256).hexdigest()
-    return {"Content-Type": "application/json", "X-Market-Timestamp": timestamp,
+    return {"Content-Type": content_type, "X-Market-Timestamp": timestamp,
             "X-Market-Nonce": nonce, "X-Market-Signature": signature,
             "User-Agent": "P2Exchange-Market-Sync/2.0"}
 
 
-def post_json(base_url, endpoint, payload, secret, opener=urlopen, sleeper=time.sleep):
-    body = json.dumps(payload, separators=(",", ":")).encode()
+def post_bytes(base_url, endpoint, body, secret, log_payload=None, content_type="application/json",
+               opener=urlopen, sleeper=time.sleep):
+    log_payload = log_payload or {}
     url = base_url.rstrip("/") + endpoint
     for attempt in range(len(RETRY_DELAYS) + 1):
         request = Request(url, data=body, method="POST",
-                          headers=signed_headers(secret, urlsplit(url).path, body))
+                          headers=signed_headers(secret, urlsplit(url).path, body, content_type=content_type))
         try:
             with opener(request, timeout=60) as response:
                 return json.loads(response.read().decode())
@@ -43,7 +44,7 @@ def post_json(base_url, endpoint, payload, secret, opener=urlopen, sleeper=time.
             ray = exc.headers.get("cf-ray", "-")
             error_type = exc.headers.get("cf-error-type", "-")
             retryable = exc.code == 429 or exc.code >= 500
-            print(f"category={payload.get('category', '-')} part={payload.get('index', '-')} HTTP {exc.code} endpoint={endpoint} cf-ray={ray} cf-error-type={error_type} detail={detail}")
+            print(f"category={log_payload.get('category', '-')} part={log_payload.get('index', '-')} HTTP {exc.code} endpoint={endpoint} cf-ray={ray} cf-error-type={error_type} detail={detail}")
             if not retryable or attempt == len(RETRY_DELAYS):
                 raise RuntimeError(f"Webhook HTTP {exc.code}: {detail}") from exc
         except (URLError, TimeoutError) as exc:
@@ -51,6 +52,17 @@ def post_json(base_url, endpoint, payload, secret, opener=urlopen, sleeper=time.
             if attempt == len(RETRY_DELAYS):
                 raise
         sleeper(RETRY_DELAYS[attempt])
+
+
+def post_json(base_url, endpoint, payload, secret, opener=urlopen, sleeper=time.sleep):
+    body = json.dumps(payload, separators=(",", ":")).encode()
+    return post_bytes(base_url, endpoint, body, secret, payload, opener=opener, sleeper=sleeper)
+
+
+def post_raw_part(base_url, endpoint, metadata, chunk, secret, opener=urlopen, sleeper=time.sleep):
+    body = json.dumps(metadata, separators=(",", ":")).encode() + b"\n" + chunk.encode("ascii")
+    return post_bytes(base_url, endpoint, body, secret, metadata, "application/octet-stream",
+                      opener=opener, sleeper=sleeper)
 
 
 def snapshot_payload(folder, commit_sha=None):
@@ -104,7 +116,7 @@ def main():
         sync_snapshot(args.url.strip(), args.secret, payload)
     else:
         from prepare_market_compact import prepare, upload
-        upload(args.url.strip(), args.secret, payload, prepare(args.snapshot_dir, CATEGORIES), post_json)
+        upload(args.url.strip(), args.secret, payload, prepare(args.snapshot_dir, CATEGORIES), post_json, post_raw_part)
 
 
 if __name__ == "__main__":

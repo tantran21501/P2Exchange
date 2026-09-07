@@ -85,7 +85,7 @@ def prepare(folder, categories):
     return result
 
 
-def upload(base_url, secret, payload, bundles, request_fn):
+def upload(base_url, secret, payload, bundles, request_fn, part_request_fn=None):
     base_url = base_url.rstrip("/").removesuffix("/internal/market/snapshot-ready")
     payload = {**payload, "protocol": 3, "league": LEAGUE}
     registration = request_fn(base_url, "/internal/market/compact-ready", payload, secret)
@@ -99,9 +99,12 @@ def upload(base_url, secret, payload, bundles, request_fn):
         for kind, content in documents.items():
             chunks = [content[i:i + PART_BYTES] for i in range(0, len(content), PART_BYTES)]
             for index, chunk in enumerate(chunks):
-                request_fn(base_url, "/internal/market/compact-part", {
-                    **category_payload, "kind": kind, "index": index, "count": len(chunks),
-                    "data": chunk, "sha256": hashlib.sha256(chunk.encode("ascii")).hexdigest()}, secret)
+                metadata = {**category_payload, "kind": kind, "index": index, "count": len(chunks),
+                            "sha256": hashlib.sha256(chunk.encode("ascii")).hexdigest()}
+                if part_request_fn is None:
+                    request_fn(base_url, "/internal/market/compact-part", {**metadata, "data": chunk}, secret)
+                else:
+                    part_request_fn(base_url, "/internal/market/compact-part-raw", metadata, chunk, secret)
         points = json.loads(documents.get("history", '{"points":[]}'))["points"]
         if points:
             category_payload.update({"history_point_count": len(points),

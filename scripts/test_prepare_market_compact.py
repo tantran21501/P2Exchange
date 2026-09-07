@@ -56,6 +56,29 @@ class CompactTests(unittest.TestCase):
         self.assertEqual(len(parts), 3)
         self.assertTrue(calls[-1][0].endswith("finalize"))
 
+    def test_raw_upload_hook_receives_metadata_and_chunk_separately(self):
+        calls = []
+        raw_parts = []
+        content = "x" * (PART_BYTES + 19)
+
+        def request(url, endpoint, payload, secret):
+            calls.append((endpoint, payload))
+            if endpoint.endswith("ready"):
+                return {"status": "SYNCING", "sync_id": "a" * 24}
+            return {"status": "CURRENT", "completed_category_count": 1}
+
+        def raw_request(url, endpoint, metadata, chunk, secret):
+            raw_parts.append((endpoint, metadata, chunk))
+            self.assertTrue(endpoint.endswith("compact-part-raw"))
+            self.assertNotIn("data", metadata)
+            self.assertEqual(hashlib.sha256(chunk.encode("ascii")).hexdigest(), metadata["sha256"])
+            return {"status": "UPLOADED"}
+
+        upload("https://example.test/internal/market/snapshot-ready", "secret", {},
+               {"Currency": {"current": content}}, request, raw_request)
+        self.assertEqual("".join(chunk for _, _, chunk in raw_parts), content)
+        self.assertEqual(len(raw_parts), 2)
+
     def test_unknown_pair_league_is_rejected(self):
         value = manifest()
         del value["pair_books"]["league"]
