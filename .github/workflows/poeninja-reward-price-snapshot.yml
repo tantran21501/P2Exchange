@@ -95,7 +95,9 @@ jobs:
           with open("data/currency.json", encoding="utf-8") as handle:
               data = json.load(handle)
 
-          if data.get("league") != "Forbidden Rites":
+          league = data.get("league")
+          league = (league.get("value") or league.get("name")) if isinstance(league, dict) else league
+          if league != "Forbidden Rites":
               raise SystemExit("currency.json league must be Forbidden Rites")
 
           rewards = data["rewards"]
