@@ -193,6 +193,7 @@ def write_pairs(snapshot_dir: Path, raw_pairs: Any, observed_at: str, league: st
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Add compact POE2 Scout pair books to an hourly snapshot.")
     parser.add_argument("--snapshots-dir", type=Path, default=DEFAULT_SNAPSHOTS_DIR)
+    parser.add_argument("--snapshot-dir", type=Path, default=None)
     parser.add_argument("--snapshot-time", default=os.getenv("PAIR_SNAPSHOT_TIME", ""))
     parser.add_argument("--league", default=os.getenv("SCOUT_LEAGUE", "Forbidden Rites"))
     parser.add_argument("--api-base", default=os.getenv("SCOUT_API_BASE", scout.DEFAULT_API_BASE))
@@ -213,7 +214,10 @@ def main(argv: list[str] | None = None) -> int:
     if league_name != "Forbidden Rites":
         raise ValueError("Only Forbidden Rites softcore is enabled")
     raw_pairs = client.get_json(args.realm, "Leagues", league_name, "SnapshotPairs")
-    target = args.snapshots_dir / snapshot_folder(timestamp)
+    target = args.snapshot_dir or (Path(os.environ["SNAPSHOT_DIR"]) if os.getenv("SNAPSHOT_DIR") else
+                                   args.snapshots_dir / snapshot_folder(timestamp))
+    if not (target / "_manifest.json").exists():
+        raise FileNotFoundError(f"Snapshot manifest not found in {target}; run the full category snapshot first")
     counts = write_pairs(target, raw_pairs, iso(timestamp), league_name)
     print(f"[OK] wrote {sum(counts.values())} compact directed pair books to {target}", file=sys.stderr)
     return 0

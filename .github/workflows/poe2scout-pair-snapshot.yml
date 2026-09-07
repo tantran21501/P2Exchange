@@ -37,13 +37,33 @@ jobs:
           python-version: "3.13"
       - name: Run unit tests
         run: python3 -m unittest discover -s scripts -p 'test_*.py'
-      - name: Select current hourly folder
+      - name: Select latest full category folder
         run: |
           python3 - <<'PY' >> "$GITHUB_ENV"
+          import json
           from datetime import datetime, timezone
+          from pathlib import Path
+          CATEGORIES = ("Abyss", "Breach", "Currency", "Delirium", "Essences", "Expedition",
+                        "Fragments", "Idols", "LineageSupportGems", "Ritual", "Runes",
+                        "SoulCores", "UncutGems", "Verisium")
+          def league_value(value):
+              return (value.get("value") or value.get("name")) if isinstance(value, dict) else value
+          candidates = []
+          for folder in Path("data/snapshots").glob("??????_??"):
+              manifest_path = folder / "_manifest.json"
+              if not manifest_path.exists():
+                  continue
+              manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+              if league_value(manifest.get("league")) != "Forbidden Rites":
+                  continue
+              if all((folder / f"{category}.json").exists() for category in CATEGORIES):
+                  candidates.append(folder)
+          if not candidates:
+              raise SystemExit("No completed Forbidden Rites category snapshot found")
+          folder = max(candidates, key=lambda path: datetime.strptime(path.name, "%d%m%y_%H"))
           now = datetime.now(timezone.utc)
           print(f"PAIR_SNAPSHOT_TIME={now.strftime('%Y-%m-%dT%H:%M:%SZ')}")
-          print(f"SNAPSHOT_DIR=data/snapshots/{now.strftime('%d%m%y_%H')}")
+          print(f"SNAPSHOT_DIR={folder.as_posix()}")
           PY
       - name: Fetch and compact POE2 Scout pair books
         env:
@@ -51,7 +71,7 @@ jobs:
           SCOUT_USER_AGENT: ${{ vars.SCOUT_USER_AGENT || 'P2Exchange-POE2ScoutPairSnapshot/1.0 (github-actions)' }}
           SCOUT_TIMEOUT: "30"
           SCOUT_RETRIES: "4"
-        run: python3 scripts/fetch_scout_pairs_snapshot.py --snapshots-dir data/snapshots
+        run: python3 scripts/fetch_scout_pairs_snapshot.py --snapshot-dir "$SNAPSHOT_DIR"
       - name: Validate compact pair books
         run: |
           test -d "$SNAPSHOT_DIR"
