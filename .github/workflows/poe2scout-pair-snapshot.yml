@@ -109,6 +109,6 @@ jobs:
       - name: Notify Economy Radar market sync
         if: success()
         env:
-          MARKET_SYNC_WEBHOOK_URL: ${{ inputs.market_target == 'staging' && 'https://poe2-license-api-staging.tantnlamma.workers.dev' || vars.MARKET_SYNC_WEBHOOK_URL }}
+          MARKET_SYNC_WEBHOOK_URL: ${{ inputs.market_target == 'staging' && 'https://poe2-market-ingest-staging.tantnlamma.workers.dev' || vars.MARKET_SYNC_WEBHOOK_URL }}
           MARKET_COMPACT_WEBHOOK_SECRET: ${{ inputs.market_target == 'staging' && secrets.STAGING_MARKET_COMPACT_WEBHOOK_SECRET || secrets.MARKET_COMPACT_WEBHOOK_SECRET }}
         run: python3 scripts/sync_market_snapshot.py --snapshot-dir "$SNAPSHOT_DIR"
