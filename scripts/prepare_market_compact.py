@@ -38,6 +38,34 @@ def load_market(folder, category):
     return currency if category == "Currency" else merge_market_documents(currency, load(category), category)
 
 
+def encode_document(category, kind, document):
+    content = json.dumps(document, separators=(",", ":"), sort_keys=True, allow_nan=False)
+    limit = LIMITS[kind]
+    if len(content) > limit:
+        raise ValueError(f"{category}/{kind} exceeds {limit} byte safety limit")
+    return content
+
+
+def encode_history(category, history):
+    limit = LIMITS["history"]
+    content = json.dumps(history, separators=(",", ":"), sort_keys=True, allow_nan=False)
+    if len(content) <= limit:
+        return content
+
+    original_points = list(history.get("points") or [])
+    points = original_points
+    while len(content) > limit and len(points) > 1:
+        points = points[:-1]
+        content = json.dumps({**history, "points": points}, separators=(",", ":"),
+                             sort_keys=True, allow_nan=False)
+    if len(content) > limit:
+        raise ValueError(f"{category}/history current point exceeds {limit} byte safety limit")
+    history["points"] = points
+    print(f"trimmed category={category} history_points={len(original_points)}->{len(points)} "
+          f"history_bytes={len(content)}")
+    return content
+
+
 def prepare(folder, categories):
     manifest = read(folder / "_manifest.json")
     validate_manifest(manifest)
@@ -74,12 +102,8 @@ def prepare(folder, categories):
                   "quote_observed_at": market["quote_observed_at"]}
         history = {"schema_version": 3, "league": LEAGUE, "category": category,
                    "points": compact_history(points, market)}
-        encoded = {"current": json.dumps(bundle, separators=(",", ":"), sort_keys=True, allow_nan=False),
-                   "history": json.dumps(history, separators=(",", ":"), sort_keys=True, allow_nan=False)}
-        for kind, content in encoded.items():
-            limit = LIMITS[kind]
-            if len(content) > limit:
-                raise ValueError(f"{category}/{kind} exceeds {limit} byte safety limit")
+        encoded = {"current": encode_document(category, "current", bundle),
+                   "history": encode_history(category, history)}
         result[category] = encoded
         print(f"prepared category={category} current_bytes={len(encoded['current'])} history_bytes={len(encoded['history'])}")
     return result

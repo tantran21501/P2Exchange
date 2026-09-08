@@ -1,9 +1,12 @@
 import hashlib
+import contextlib
+import io
 import json
 import tempfile
 import unittest
 from pathlib import Path
 
+import prepare_market_compact as compact
 from prepare_market_compact import LEAGUE, PART_BYTES, prepare, upload, validate_manifest
 
 
@@ -16,6 +19,18 @@ def document(price=2):
     return {"lines": [{"id": "chaos", "primaryValue": price}], "pairs": [
         {"from": "divine", "to": "chaos", "rate": 0.4, "volume": 12,
          "observed": True, "independent": False, "source": "poe2scout-snapshot-estimate"}]}
+
+
+def rich_document(price=2, width=8):
+    payload = document(price)
+    payload["items"] = []
+    for index in range(width):
+        item_id = f"rune{price}_{index}"
+        payload["items"].append({"id": item_id, "name": f"Rune {index} {'x' * 24}",
+                                 "detailsId": item_id})
+        payload["lines"].append({"id": item_id, "primaryValue": price + index + 1,
+                                 "volumePrimaryValue": 10 + index})
+    return payload
 
 
 class CompactTests(unittest.TestCase):
@@ -37,6 +52,51 @@ class CompactTests(unittest.TestCase):
             self.assertTrue(pair["observed"])
             self.assertFalse(pair["independent"])
             self.assertEqual(pair["source"], "poe2scout-snapshot-estimate")
+
+    def test_oversized_history_trims_oldest_points(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for folder, price in (("060926_11", 4), ("060926_10", 3),
+                                  ("060926_09", 2), ("060926_08", 1)):
+                path = root / folder
+                path.mkdir()
+                (path / "_manifest.json").write_text(json.dumps(manifest()), encoding="utf-8")
+                (path / "Currency.json").write_text(json.dumps(rich_document(price)), encoding="utf-8")
+
+            previous_limit = compact.LIMITS["history"]
+            compact.LIMITS["history"] = 3000
+            try:
+                output = io.StringIO()
+                with contextlib.redirect_stdout(output):
+                    encoded = prepare(root / "060926_11", ["Currency"])["Currency"]
+            finally:
+                compact.LIMITS["history"] = previous_limit
+
+            history = json.loads(encoded["history"])
+            snapshot_times = [point["snapshot_at"] for point in history["points"]]
+            self.assertLess(len(snapshot_times), 4)
+            self.assertLessEqual(len(encoded["history"]), 3000)
+            self.assertEqual(snapshot_times, sorted(snapshot_times, reverse=True))
+            self.assertIn("2026-09-06T11:00:00Z", snapshot_times)
+            self.assertNotIn("2026-09-06T08:00:00Z", snapshot_times)
+            self.assertIn("trimmed category=Currency history_points=4->", output.getvalue())
+
+    def test_oversized_single_history_point_still_fails(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            folder = root / "060926_11"
+            folder.mkdir()
+            (folder / "_manifest.json").write_text(json.dumps(manifest()), encoding="utf-8")
+            (folder / "Currency.json").write_text(json.dumps(rich_document()), encoding="utf-8")
+
+            previous_limit = compact.LIMITS["history"]
+            compact.LIMITS["history"] = 200
+            try:
+                with self.assertRaises(ValueError) as error:
+                    prepare(folder, ["Currency"])
+            finally:
+                compact.LIMITS["history"] = previous_limit
+            self.assertIn("Currency/history current point exceeds 200 byte safety limit", str(error.exception))
 
     def test_large_upload_parts_are_bounded_and_checksummed(self):
         calls = []
