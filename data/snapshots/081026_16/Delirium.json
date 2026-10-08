@@ -1,0 +1,713 @@
+{
+  "core": {
+    "items": [
+      {
+        "id": "divine",
+        "name": "Divine Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "category": "Currency",
+        "detailsId": "divine-orb"
+      },
+      {
+        "id": "exalted",
+        "name": "Exalted Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+        "category": "Currency",
+        "detailsId": "exalted-orb"
+      },
+      {
+        "id": "chaos",
+        "name": "Chaos Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "category": "Currency",
+        "detailsId": "chaos-orb"
+      }
+    ],
+    "rates": {
+      "exalted": 771.7,
+      "chaos": 10.8
+    },
+    "primary": "divine",
+    "secondary": "chaos"
+  },
+  "lines": [
+    {
+      "id": "ancient-concentrated-liquid-isolation",
+      "primaryValue": 0.08506,
+      "volumePrimaryValue": 0.5245,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 1.09,
+      "sparkline": {
+        "totalChange": -80.14,
+        "data": [
+          10.08,
+          -58.99,
+          -37.19,
+          -32.64,
+          -54.18,
+          -72.48,
+          -80.14
+        ]
+      }
+    },
+    {
+      "id": "ancient-concentrated-liquid-suffering",
+      "primaryValue": 0.0485,
+      "volumePrimaryValue": 0.3799,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02672,
+      "sparkline": {
+        "totalChange": 142.4,
+        "data": [
+          -5.05,
+          -20.28,
+          -36.38,
+          11.94,
+          -26.0,
+          7.04,
+          142.4
+        ]
+      }
+    },
+    {
+      "id": "ancient-diluted-liquid-greed",
+      "primaryValue": 0.0001364,
+      "volumePrimaryValue": 0.000432,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 9.5,
+      "sparkline": {
+        "totalChange": -51.32,
+        "data": [
+          157.2,
+          112.0,
+          212.7,
+          160.6,
+          173.0,
+          174.0,
+          -51.32
+        ]
+      }
+    },
+    {
+      "id": "ancient-diluted-liquid-ire",
+      "primaryValue": 2.389e-05,
+      "volumePrimaryValue": 0.0008639,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 54.25,
+      "sparkline": {
+        "totalChange": -79.89,
+        "data": [
+          -28.51,
+          -9.33,
+          -6.27,
+          -48.14,
+          19.84,
+          25.64,
+          -79.89
+        ]
+      }
+    },
+    {
+      "id": "ancient-liquid-disgust",
+      "primaryValue": 0.003147,
+      "volumePrimaryValue": 0.003672,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.4118,
+      "sparkline": {
+        "totalChange": 4.45,
+        "data": [
+          -36.85,
+          -54.96,
+          -62.92,
+          -74.46,
+          -70.06,
+          5.56,
+          4.45
+        ]
+      }
+    },
+    {
+      "id": "ancient-liquid-envy",
+      "primaryValue": 0.03226,
+      "volumePrimaryValue": 0.1667,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 31,
+      "sparkline": {
+        "totalChange": -79.15,
+        "data": [
+          0,
+          115.5,
+          -20.73,
+          -70.62,
+          null,
+          null,
+          -79.15
+        ]
+      }
+    },
+    {
+      "id": "ancient-liquid-paranoia",
+      "primaryValue": 0.00432,
+      "volumePrimaryValue": 0.008639,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.3,
+      "sparkline": {
+        "totalChange": 233.3,
+        "data": [
+          -37.8,
+          -41.67,
+          -17.83,
+          32.54,
+          154.3,
+          40.0,
+          233.3
+        ]
+      }
+    },
+    {
+      "id": "ancient-potent-liquid-contempt",
+      "primaryValue": 20.31,
+      "volumePrimaryValue": 3906,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.04924,
+      "sparkline": {
+        "totalChange": 24.89,
+        "data": [
+          25.52,
+          38.05,
+          20.82,
+          31.23,
+          30.46,
+          24.18,
+          24.89
+        ]
+      }
+    },
+    {
+      "id": "ancient-potent-liquid-ferocity",
+      "primaryValue": 0.01155,
+      "volumePrimaryValue": 0.04233,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.1122,
+      "sparkline": {
+        "totalChange": -59.86,
+        "data": [
+          -48.56,
+          -61.2,
+          -62.94,
+          -57.41,
+          -70.27,
+          -75.32,
+          -59.86
+        ]
+      }
+    },
+    {
+      "id": "ancient-concentrated-liquid-fear",
+      "primaryValue": 0.02783,
+      "volumePrimaryValue": 0.2134,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.04656,
+      "sparkline": {
+        "totalChange": 1.43,
+        "data": [
+          -59.71,
+          -31.16,
+          -64.02,
+          -66.66,
+          -63.02,
+          -19.29,
+          1.43
+        ]
+      }
+    },
+    {
+      "id": "ancient-liquid-despair",
+      "primaryValue": 0.001267,
+      "volumePrimaryValue": 0.01879,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 1.02,
+      "sparkline": {
+        "totalChange": -90.8,
+        "data": [
+          27.45,
+          37.26,
+          -31.95,
+          -34.77,
+          4.5,
+          -36.74,
+          -90.8
+        ]
+      }
+    },
+    {
+      "id": "ancient-potent-liquid-melancholy",
+      "primaryValue": 0.1629,
+      "volumePrimaryValue": 19.04,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.5681,
+      "sparkline": {
+        "totalChange": -9.83,
+        "data": [
+          2.3,
+          1.56,
+          -7.27,
+          0.53,
+          -9.86,
+          -3.32,
+          -9.83
+        ]
+      }
+    },
+    {
+      "id": "concentrated-liquid-isolation",
+      "primaryValue": 0.1961,
+      "volumePrimaryValue": 41.58,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.472,
+      "sparkline": {
+        "totalChange": -41.53,
+        "data": [
+          26.65,
+          7.05,
+          12.16,
+          -5.91,
+          -31.06,
+          -37.1,
+          -41.53
+        ]
+      }
+    },
+    {
+      "id": "concentrated-liquid-suffering",
+      "primaryValue": 0.1116,
+      "volumePrimaryValue": 9.87,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.8297,
+      "sparkline": {
+        "totalChange": 17.38,
+        "data": [
+          9.07,
+          1.41,
+          20.8,
+          -15.17,
+          -14.5,
+          -27.3,
+          17.38
+        ]
+      }
+    },
+    {
+      "id": "diluted-liquid-ire",
+      "primaryValue": 0.0001659,
+      "volumePrimaryValue": 0.03456,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 7.81,
+      "sparkline": {
+        "totalChange": 1.36,
+        "data": [
+          -32.35,
+          -14.84,
+          -24.03,
+          4.87,
+          -2.22,
+          24.55,
+          1.36
+        ]
+      }
+    },
+    {
+      "id": "liquid-despair",
+      "primaryValue": 0.005957,
+      "volumePrimaryValue": 0.7635,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.2175,
+      "sparkline": {
+        "totalChange": 4.11,
+        "data": [
+          13.08,
+          54.53,
+          16.27,
+          19.99,
+          18.88,
+          6.35,
+          4.11
+        ]
+      }
+    },
+    {
+      "id": "liquid-envy",
+      "primaryValue": 0.0002786,
+      "volumePrimaryValue": 0.03909,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 4.65,
+      "sparkline": {
+        "totalChange": -86.39,
+        "data": [
+          -64.66,
+          -60.1,
+          -33.08,
+          -17.39,
+          -77.2,
+          -65.2,
+          -86.39
+        ]
+      }
+    },
+    {
+      "id": "liquid-paranoia",
+      "primaryValue": 0.003271,
+      "volumePrimaryValue": 0.07905,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.3962,
+      "sparkline": {
+        "totalChange": 326.5,
+        "data": [
+          15.42,
+          30.39,
+          43.19,
+          64.67,
+          -22.46,
+          -36.53,
+          326.5
+        ]
+      }
+    },
+    {
+      "id": "potent-liquid-ferocity",
+      "primaryValue": 6.7,
+      "volumePrimaryValue": 4240,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.1492,
+      "sparkline": {
+        "totalChange": 19.59,
+        "data": [
+          19.54,
+          54.0,
+          56.92,
+          46.02,
+          26.77,
+          13.95,
+          19.59
+        ]
+      }
+    },
+    {
+      "id": "concentrated-liquid-fear",
+      "primaryValue": 0.01376,
+      "volumePrimaryValue": 2.2,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.09421,
+      "sparkline": {
+        "totalChange": -37.87,
+        "data": [
+          13.36,
+          34.48,
+          10.46,
+          -3.68,
+          2.48,
+          -9.89,
+          -37.87
+        ]
+      }
+    },
+    {
+      "id": "diluted-liquid-greed",
+      "primaryValue": 0.0005326,
+      "volumePrimaryValue": 0.0324,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 2.43,
+      "sparkline": {
+        "totalChange": -63.34,
+        "data": [
+          -72.04,
+          -80.14,
+          -84.19,
+          -86.55,
+          -73.45,
+          -0.19,
+          -63.34
+        ]
+      }
+    },
+    {
+      "id": "diluted-liquid-guilt",
+      "primaryValue": 0.0005027,
+      "volumePrimaryValue": 0.01944,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 2.58,
+      "sparkline": {
+        "totalChange": -0.58,
+        "data": [
+          -54.89,
+          -68.21,
+          -58.2,
+          -39.24,
+          -31.26,
+          97.85,
+          -0.58
+        ]
+      }
+    },
+    {
+      "id": "ancient-diluted-liquid-guilt",
+      "primaryValue": 0.0002592,
+      "volumePrimaryValue": 0.000432,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 5,
+      "sparkline": {
+        "totalChange": 105.0,
+        "data": [
+          262.1,
+          27.46,
+          225.0,
+          -54.03,
+          13.08,
+          -8.13,
+          105.0
+        ]
+      }
+    },
+    {
+      "id": "liquid-disgust",
+      "primaryValue": 0.001438,
+      "volumePrimaryValue": 0.5721,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.9011,
+      "sparkline": {
+        "totalChange": -42.94,
+        "data": [
+          -17.39,
+          -10.45,
+          -5.58,
+          -20.93,
+          -14.39,
+          -25.3,
+          -42.94
+        ]
+      }
+    },
+    {
+      "id": "potent-liquid-contempt",
+      "primaryValue": 2.67,
+      "volumePrimaryValue": 1539,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.3751,
+      "sparkline": {
+        "totalChange": 77.11,
+        "data": [
+          9.43,
+          12.53,
+          10.42,
+          16.24,
+          16.03,
+          19.87,
+          77.11
+        ]
+      }
+    },
+    {
+      "id": "potent-liquid-melancholy",
+      "primaryValue": 0.04138,
+      "volumePrimaryValue": 3.0,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 24.17,
+      "sparkline": {
+        "totalChange": -54.7,
+        "data": [
+          -27.23,
+          -37.83,
+          -32.01,
+          -33.1,
+          24.49,
+          2.26,
+          -54.7
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ancient-concentrated-liquid-isolation",
+      "name": "Ancient Concentrated Liquid Isolation",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3RDb25jZW50cmF0ZWREaXN0aWxsZWRJc29sYXRpb24iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/fa4fd8531b/TimelostConcentratedDistilledIsolation.png",
+      "category": "Delirium",
+      "detailsId": "ancient-concentrated-liquid-isolation"
+    },
+    {
+      "id": "ancient-concentrated-liquid-suffering",
+      "name": "Ancient Concentrated Liquid Suffering",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3RDb25jZW50cmF0ZWREaXN0aWxsZWRTdWZmZXJpbmciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/14e097ad2a/TimelostConcentratedDistilledSuffering.png",
+      "category": "Delirium",
+      "detailsId": "ancient-concentrated-liquid-suffering"
+    },
+    {
+      "id": "ancient-diluted-liquid-greed",
+      "name": "Ancient Diluted Liquid Greed",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3REaWx1dGVkRGlzdGlsbGVkR3JlZWQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8ef165042d/TimelostDilutedDistilledGreed.png",
+      "category": "Delirium",
+      "detailsId": "ancient-diluted-liquid-greed"
+    },
+    {
+      "id": "ancient-diluted-liquid-ire",
+      "name": "Ancient Diluted Liquid Ire",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3REaWx1dGVkRGlzdGlsbGVkSXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/37c3144cb7/TimelostDilutedDistilledIre.png",
+      "category": "Delirium",
+      "detailsId": "ancient-diluted-liquid-ire"
+    },
+    {
+      "id": "ancient-liquid-disgust",
+      "name": "Ancient Liquid Disgust",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3REaXN0aWxsZWREaXNndXN0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/692d116504/TimelostDistilledDisgust.png",
+      "category": "Delirium",
+      "detailsId": "ancient-liquid-disgust"
+    },
+    {
+      "id": "ancient-liquid-envy",
+      "name": "Ancient Liquid Envy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3REaXN0aWxsZWRFbnZ5Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/8135fea7ea/TimelostDistilledEnvy.png",
+      "category": "Delirium",
+      "detailsId": "ancient-liquid-envy"
+    },
+    {
+      "id": "ancient-liquid-paranoia",
+      "name": "Ancient Liquid Paranoia",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3REaXN0aWxsZWRQYXJhbm9pYSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/ad46b5868c/TimelostDistilledParanoia.png",
+      "category": "Delirium",
+      "detailsId": "ancient-liquid-paranoia"
+    },
+    {
+      "id": "ancient-potent-liquid-contempt",
+      "name": "Ancient Potent Liquid Contempt",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxlc3NVbmlxdWVCZWFzdEVtb3Rpb24iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/9a1f8acc0e/TimelessUniqueBeastEmotion.png",
+      "category": "Delirium",
+      "detailsId": "ancient-potent-liquid-contempt"
+    },
+    {
+      "id": "ancient-potent-liquid-ferocity",
+      "name": "Ancient Potent Liquid Ferocity",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltbGVzc1VuaXF1ZUNvbnN0cnVjdHNFbW90aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/0274721bd5/TimlessUniqueConstructsEmotion.png",
+      "category": "Delirium",
+      "detailsId": "ancient-potent-liquid-ferocity"
+    },
+    {
+      "id": "ancient-concentrated-liquid-fear",
+      "name": "Ancient Concentrated Liquid Fear",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3RDb25jZW50cmF0ZWREaXN0aWxsZWRGZWFyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5beedf767c/TimelostConcentratedDistilledFear.png",
+      "category": "Delirium",
+      "detailsId": "ancient-concentrated-liquid-fear"
+    },
+    {
+      "id": "ancient-liquid-despair",
+      "name": "Ancient Liquid Despair",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3REaXN0aWxsZWREZXNwYWlyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/20d8801d9f/TimelostDistilledDespair.png",
+      "category": "Delirium",
+      "detailsId": "ancient-liquid-despair"
+    },
+    {
+      "id": "ancient-potent-liquid-melancholy",
+      "name": "Ancient Potent Liquid Melancholy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxlc3NVbmlxdWVIdW1hbnNFbW90aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/34b9461ae7/TimelessUniqueHumansEmotion.png",
+      "category": "Delirium",
+      "detailsId": "ancient-potent-liquid-melancholy"
+    },
+    {
+      "id": "concentrated-liquid-isolation",
+      "name": "Concentrated Liquid Isolation",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvQ29uY2VudHJhdGVkRGlzdGlsbGVkSXNvbGF0aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/44ca2d19b9/ConcentratedDistilledIsolation.png",
+      "category": "Delirium",
+      "detailsId": "concentrated-liquid-isolation"
+    },
+    {
+      "id": "concentrated-liquid-suffering",
+      "name": "Concentrated Liquid Suffering",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvQ29uY2VudHJhdGVkRGlzdGlsbGVkU3VmZmVyaW5nIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/10b12c3875/ConcentratedDistilledSuffering.png",
+      "category": "Delirium",
+      "detailsId": "concentrated-liquid-suffering"
+    },
+    {
+      "id": "diluted-liquid-ire",
+      "name": "Diluted Liquid Ire",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlsdXRlZERpc3RpbGxlZElyZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/623d6e522b/DilutedDistilledIre.png",
+      "category": "Delirium",
+      "detailsId": "diluted-liquid-ire"
+    },
+    {
+      "id": "liquid-despair",
+      "name": "Liquid Despair",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkRGVzcGFpciIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c676bf7dae/DistilledDespair.png",
+      "category": "Delirium",
+      "detailsId": "liquid-despair"
+    },
+    {
+      "id": "liquid-envy",
+      "name": "Liquid Envy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkRW52eSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/abf219916e/DistilledEnvy.png",
+      "category": "Delirium",
+      "detailsId": "liquid-envy"
+    },
+    {
+      "id": "liquid-paranoia",
+      "name": "Liquid Paranoia",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkUGFyYW5vaWEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/279e807e8f/DistilledParanoia.png",
+      "category": "Delirium",
+      "detailsId": "liquid-paranoia"
+    },
+    {
+      "id": "potent-liquid-ferocity",
+      "name": "Potent Liquid Ferocity",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVW5pcXVlQ29uc3RydWN0c0Vtb3Rpb24iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c4ddf1e927/UniqueConstructsEmotion.png",
+      "category": "Delirium",
+      "detailsId": "potent-liquid-ferocity"
+    },
+    {
+      "id": "concentrated-liquid-fear",
+      "name": "Concentrated Liquid Fear",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvQ29uY2VudHJhdGVkRGlzdGlsbGVkRmVhciIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/2c3300fcdf/ConcentratedDistilledFear.png",
+      "category": "Delirium",
+      "detailsId": "concentrated-liquid-fear"
+    },
+    {
+      "id": "diluted-liquid-greed",
+      "name": "Diluted Liquid Greed",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlsdXRlZERpc3RpbGxlZEdyZWVkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ddec210bbb/DilutedDistilledGreed.png",
+      "category": "Delirium",
+      "detailsId": "diluted-liquid-greed"
+    },
+    {
+      "id": "diluted-liquid-guilt",
+      "name": "Diluted Liquid Guilt",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlsdXRlZERpc3RpbGxlZEd1aWx0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ddbd513a9b/DilutedDistilledGuilt.png",
+      "category": "Delirium",
+      "detailsId": "diluted-liquid-guilt"
+    },
+    {
+      "id": "ancient-diluted-liquid-guilt",
+      "name": "Ancient Diluted Liquid Guilt",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVGltZWxvc3REaWx1dGVkRGlzdGlsbGVkR3VpbHQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/adc7474910/TimelostDilutedDistilledGuilt.png",
+      "category": "Delirium",
+      "detailsId": "ancient-diluted-liquid-guilt"
+    },
+    {
+      "id": "liquid-disgust",
+      "name": "Liquid Disgust",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvRGlzdGlsbGVkRGlzZ3VzdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/f462426de0/DistilledDisgust.png",
+      "category": "Delirium",
+      "detailsId": "liquid-disgust"
+    },
+    {
+      "id": "potent-liquid-contempt",
+      "name": "Potent Liquid Contempt",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVW5pcXVlQmVhc3RFbW90aW9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d126680055/UniqueBeastEmotion.png",
+      "category": "Delirium",
+      "detailsId": "potent-liquid-contempt"
+    },
+    {
+      "id": "potent-liquid-melancholy",
+      "name": "Potent Liquid Melancholy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGlzdGlsbGVkRW1vdGlvbnMvVW5pcXVlSHVtYW5zRW1vdGlvbiIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/68f4574c82/UniqueHumansEmotion.png",
+      "category": "Delirium",
+      "detailsId": "potent-liquid-melancholy"
+    }
+  ]
+}
