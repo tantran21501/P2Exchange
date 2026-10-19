@@ -1,0 +1,944 @@
+{
+  "core": {
+    "items": [
+      {
+        "id": "divine",
+        "name": "Divine Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "category": "Currency",
+        "detailsId": "divine-orb"
+      },
+      {
+        "id": "exalted",
+        "name": "Exalted Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+        "category": "Currency",
+        "detailsId": "exalted-orb"
+      },
+      {
+        "id": "chaos",
+        "name": "Chaos Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "category": "Currency",
+        "detailsId": "chaos-orb"
+      }
+    ],
+    "rates": {
+      "exalted": 712.2,
+      "chaos": 10.09
+    },
+    "primary": "divine",
+    "secondary": "chaos"
+  },
+  "lines": [
+    {
+      "id": "carved-majesty",
+      "primaryValue": 361.2,
+      "volumePrimaryValue": 1445,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.002768,
+      "sparkline": {
+        "totalChange": -0.9,
+        "data": [
+          -1.33,
+          3.44,
+          4.84,
+          -2.23,
+          -1.36,
+          3.12,
+          -0.9
+        ]
+      }
+    },
+    {
+      "id": "carved-mischief",
+      "primaryValue": 0.5453,
+      "volumePrimaryValue": 0.1818,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.1818,
+      "sparkline": {
+        "totalChange": -20.48,
+        "data": [
+          13.1,
+          7.11,
+          1.94,
+          8.11,
+          5.06,
+          -16.7,
+          -20.48
+        ]
+      }
+    },
+    {
+      "id": "carved-tenacity",
+      "primaryValue": 0.6622,
+      "volumePrimaryValue": 3.09,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.1497,
+      "sparkline": {
+        "totalChange": 13.96,
+        "data": [
+          13.84,
+          0.89,
+          -17.59,
+          -12.27,
+          -8.76,
+          -4.76,
+          13.96
+        ]
+      }
+    },
+    {
+      "id": "cat-idol",
+      "primaryValue": 0.001003,
+      "volumePrimaryValue": 0.00117,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 1.4,
+      "sparkline": {
+        "totalChange": -10.71,
+        "data": [
+          -24.24,
+          4.91,
+          -20.02,
+          22.4,
+          12.21,
+          0.17,
+          -10.71
+        ]
+      }
+    },
+    {
+      "id": "bear-idol",
+      "primaryValue": 0.01621,
+      "volumePrimaryValue": 0.05944,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.08661,
+      "sparkline": {
+        "totalChange": 153.8,
+        "data": [
+          16.03,
+          88.04,
+          79.18,
+          375.4,
+          125.3,
+          76.25,
+          153.8
+        ]
+      }
+    },
+    {
+      "id": "boar-idol",
+      "primaryValue": 0.1667,
+      "volumePrimaryValue": 1.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 6,
+      "sparkline": {
+        "totalChange": 0,
+        "data": [
+          0,
+          -2.27,
+          null,
+          145.2,
+          null,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "carved-cunning",
+      "primaryValue": 6.13,
+      "volumePrimaryValue": 15.33,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.163,
+      "sparkline": {
+        "totalChange": 4.99,
+        "data": [
+          -5.73,
+          -16.71,
+          -12.41,
+          -7.01,
+          -15.03,
+          -8.97,
+          4.99
+        ]
+      }
+    },
+    {
+      "id": "idol-of-alira",
+      "primaryValue": 0.0323,
+      "volumePrimaryValue": 0.0323,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.04348,
+      "sparkline": {
+        "totalChange": 44.81,
+        "data": [
+          -28.67,
+          -45.48,
+          -63.47,
+          -31.43,
+          1.78,
+          -18.48,
+          44.81
+        ]
+      }
+    },
+    {
+      "id": "idol-of-eeshta",
+      "primaryValue": 0.0838,
+      "volumePrimaryValue": 0.9078,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.01676,
+      "sparkline": {
+        "totalChange": -36.25,
+        "data": [
+          76.85,
+          37.14,
+          31.36,
+          35.2,
+          68.83,
+          46.86,
+          -36.25
+        ]
+      }
+    },
+    {
+      "id": "idol-of-egrin",
+      "primaryValue": 0.03148,
+      "volumePrimaryValue": 0.1259,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.04461,
+      "sparkline": {
+        "totalChange": 19.66,
+        "data": [
+          81.88,
+          97.57,
+          2.57,
+          11.23,
+          3.1,
+          15.82,
+          19.66
+        ]
+      }
+    },
+    {
+      "id": "idol-of-eramir",
+      "primaryValue": 0.3759,
+      "volumePrimaryValue": 8.33,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.66,
+      "sparkline": {
+        "totalChange": 50.38,
+        "data": [
+          0.01,
+          25.24,
+          24.17,
+          44.34,
+          61.73,
+          85.99,
+          50.38
+        ]
+      }
+    },
+    {
+      "id": "idol-of-greust",
+      "primaryValue": 0.04549,
+      "volumePrimaryValue": 0.03791,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.03086,
+      "sparkline": {
+        "totalChange": 40.87,
+        "data": [
+          -1.2,
+          33.91,
+          18.35,
+          238.0,
+          270.5,
+          199.0,
+          40.87
+        ]
+      }
+    },
+    {
+      "id": "idol-of-maxarius",
+      "primaryValue": 0.04821,
+      "volumePrimaryValue": 0.07231,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02913,
+      "sparkline": {
+        "totalChange": 56.3,
+        "data": [
+          51.07,
+          37.56,
+          43.25,
+          106.1,
+          109.8,
+          -20.2,
+          56.3
+        ]
+      }
+    },
+    {
+      "id": "idol-of-oak",
+      "primaryValue": 0.03042,
+      "volumePrimaryValue": 0.06085,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.04615,
+      "sparkline": {
+        "totalChange": -44.93,
+        "data": [
+          5.31,
+          -1.47,
+          18.23,
+          35.56,
+          14.25,
+          0.62,
+          -44.93
+        ]
+      }
+    },
+    {
+      "id": "idol-of-ralakesh",
+      "primaryValue": 0.1421,
+      "volumePrimaryValue": 2.3,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.6978,
+      "sparkline": {
+        "totalChange": -27.22,
+        "data": [
+          19.26,
+          -8.35,
+          3.26,
+          15.01,
+          21.47,
+          36.15,
+          -27.22
+        ]
+      }
+    },
+    {
+      "id": "idol-of-the-martyr",
+      "primaryValue": 0.03033,
+      "volumePrimaryValue": 0.07582,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.0463,
+      "sparkline": {
+        "totalChange": 3.42,
+        "data": [
+          24.62,
+          -0.01,
+          -2.66,
+          -36.41,
+          -77.3,
+          -12.9,
+          3.42
+        ]
+      }
+    },
+    {
+      "id": "idol-of-the-sycophant",
+      "primaryValue": 0.04958,
+      "volumePrimaryValue": 0.09915,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 2,
+      "sparkline": {
+        "totalChange": -63.06,
+        "data": [
+          -41.28,
+          -44.22,
+          -46.85,
+          -0.27,
+          21.34,
+          -34.33,
+          -63.06
+        ]
+      }
+    },
+    {
+      "id": "idol-of-yeena",
+      "primaryValue": 0.05464,
+      "volumePrimaryValue": 0.8561,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.0257,
+      "sparkline": {
+        "totalChange": 177.1,
+        "data": [
+          36.29,
+          9.0,
+          29.13,
+          29.06,
+          34.78,
+          136.5,
+          177.1
+        ]
+      }
+    },
+    {
+      "id": "owl-idol",
+      "primaryValue": 0.002916,
+      "volumePrimaryValue": 0.006319,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.4815,
+      "sparkline": {
+        "totalChange": 107.7,
+        "data": [
+          349.5,
+          286.2,
+          457.4,
+          343.0,
+          133.0,
+          338.1,
+          107.7
+        ]
+      }
+    },
+    {
+      "id": "primate-idol",
+      "primaryValue": 0.01161,
+      "volumePrimaryValue": 0.2457,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.121,
+      "sparkline": {
+        "totalChange": 79.82,
+        "data": [
+          241.2,
+          306.4,
+          584.6,
+          295.6,
+          237.7,
+          117.4,
+          79.82
+        ]
+      }
+    },
+    {
+      "id": "stoat-idol",
+      "primaryValue": 0.05236,
+      "volumePrimaryValue": 0.06108,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02682,
+      "sparkline": {
+        "totalChange": 188.0,
+        "data": [
+          145.0,
+          -38.51,
+          42.18,
+          194.5,
+          70.86,
+          -42.32,
+          188.0
+        ]
+      }
+    },
+    {
+      "id": "stag-idol",
+      "primaryValue": 0.0007659,
+      "volumePrimaryValue": 0.001404,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 1.83,
+      "sparkline": {
+        "totalChange": 80.0,
+        "data": [
+          173.4,
+          123.0,
+          124.8,
+          115.7,
+          80.77,
+          71.45,
+          80.0
+        ]
+      }
+    },
+    {
+      "id": "fox-idol",
+      "primaryValue": 0.638,
+      "volumePrimaryValue": 22.76,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.1554,
+      "sparkline": {
+        "totalChange": -61.76,
+        "data": [
+          18.16,
+          -17.57,
+          -37.78,
+          -31.31,
+          -32.81,
+          -36.97,
+          -61.76
+        ]
+      }
+    },
+    {
+      "id": "hawk-idol",
+      "primaryValue": 0.05011,
+      "volumePrimaryValue": 0.5011,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02802,
+      "sparkline": {
+        "totalChange": -48.14,
+        "data": [
+          -40.68,
+          -39.48,
+          -44.53,
+          -33.29,
+          -9.45,
+          -23.89,
+          -48.14
+        ]
+      }
+    },
+    {
+      "id": "idol-of-grold",
+      "primaryValue": 1,
+      "volumePrimaryValue": 11.83,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1,
+      "sparkline": {
+        "totalChange": 100,
+        "data": [
+          0,
+          64.29,
+          100,
+          100,
+          66.67,
+          90.0,
+          100
+        ]
+      }
+    },
+    {
+      "id": "idol-of-kraityn",
+      "primaryValue": 0.02207,
+      "volumePrimaryValue": 0.02574,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.06364,
+      "sparkline": {
+        "totalChange": 214.3,
+        "data": [
+          54.64,
+          64.83,
+          222.5,
+          272.5,
+          353.5,
+          156.2,
+          214.3
+        ]
+      }
+    },
+    {
+      "id": "idol-of-silk",
+      "primaryValue": 0.09915,
+      "volumePrimaryValue": 0.03305,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 1,
+      "sparkline": {
+        "totalChange": 0,
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "idol-of-sirrius",
+      "primaryValue": 0.3006,
+      "volumePrimaryValue": 4.71,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.3298,
+      "sparkline": {
+        "totalChange": 8.41,
+        "data": [
+          19.13,
+          4.25,
+          5.62,
+          6.03,
+          -3.77,
+          0.89,
+          8.41
+        ]
+      }
+    },
+    {
+      "id": "idol-of-the-pharisee",
+      "primaryValue": 0.04767,
+      "volumePrimaryValue": 0.1509,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02946,
+      "sparkline": {
+        "totalChange": 142.5,
+        "data": [
+          78.87,
+          118.6,
+          46.99,
+          103.9,
+          114.1,
+          97.46,
+          142.5
+        ]
+      }
+    },
+    {
+      "id": "idol-of-thruldana",
+      "primaryValue": 0.06935,
+      "volumePrimaryValue": 0.2081,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02025,
+      "sparkline": {
+        "totalChange": 49.44,
+        "data": [
+          -22.43,
+          -21.86,
+          -5.4,
+          -28.6,
+          54.69,
+          53.86,
+          49.44
+        ]
+      }
+    },
+    {
+      "id": "ox-idol",
+      "primaryValue": 0.05339,
+      "volumePrimaryValue": 0.8097,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 1.86,
+      "sparkline": {
+        "totalChange": -30.0,
+        "data": [
+          168.1,
+          2.04,
+          -4.43,
+          84.22,
+          374.3,
+          326.4,
+          -30.0
+        ]
+      }
+    },
+    {
+      "id": "panther-idol",
+      "primaryValue": 0.4773,
+      "volumePrimaryValue": 3.5,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.1,
+      "sparkline": {
+        "totalChange": 90.91,
+        "data": [
+          41.96,
+          100,
+          100.9,
+          20.89,
+          25.0,
+          37.44,
+          90.91
+        ]
+      }
+    },
+    {
+      "id": "rabbit-idol",
+      "primaryValue": 0.1491,
+      "volumePrimaryValue": 11.01,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.6652,
+      "sparkline": {
+        "totalChange": -61.86,
+        "data": [
+          -32.54,
+          -58.44,
+          -51.11,
+          -33.3,
+          -57.94,
+          -55.13,
+          -61.86
+        ]
+      }
+    },
+    {
+      "id": "snake-idol",
+      "primaryValue": 0.1053,
+      "volumePrimaryValue": 0.6667,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 9.5,
+      "sparkline": {
+        "totalChange": -29.82,
+        "data": [
+          0,
+          53.01,
+          66.67,
+          null,
+          281.0,
+          185.0,
+          -29.82
+        ]
+      }
+    },
+    {
+      "id": "wolf-idol",
+      "primaryValue": 0.125,
+      "volumePrimaryValue": 0.1667,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 8,
+      "sparkline": {
+        "totalChange": -87.5,
+        "data": [
+          -90.91,
+          -83.33,
+          -83.33,
+          -92.31,
+          null,
+          -85.71,
+          -87.5
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "carved-majesty",
+      "name": "Carved Majesty",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUml0dWFsL1JpdHVhbE1hamVzdGljQmVhc3RzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/db3cfd505d/RitualMajesticBeasts.png",
+      "category": "Expedition",
+      "detailsId": "carved-majesty"
+    },
+    {
+      "id": "carved-mischief",
+      "name": "Carved Mischief",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUml0dWFsL1JpdHVhbE1pc2NoaWV2b3VzQ3JlYXR1cmVzIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/de172a5b3c/RitualMischievousCreatures.png",
+      "category": "Expedition",
+      "detailsId": "carved-mischief"
+    },
+    {
+      "id": "carved-tenacity",
+      "name": "Carved Tenacity",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUml0dWFsL1JpdHVhbFRlbmFjaW91c0JlYXN0cyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/af56b6ff5d/RitualTenaciousBeasts.png",
+      "category": "Expedition",
+      "detailsId": "carved-tenacity"
+    },
+    {
+      "id": "cat-idol",
+      "name": "Cat Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUNhdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/3d5bc70405/AzmeriSocketableCat.png",
+      "category": "Ritual",
+      "detailsId": "cat-idol"
+    },
+    {
+      "id": "bear-idol",
+      "name": "Bear Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJlYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2d494d1054/AzmeriSocketableBear.png",
+      "category": "Ritual",
+      "detailsId": "bear-idol"
+    },
+    {
+      "id": "boar-idol",
+      "name": "Boar Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJvYXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5e04714fc6/AzmeriSocketableBoar.png",
+      "category": "Ritual",
+      "detailsId": "boar-idol"
+    },
+    {
+      "id": "carved-cunning",
+      "name": "Carved Cunning",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvUml0dWFsL1JpdHVhbEFtYnVzaFByZWRhdG9ycyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/b065fee0b1/RitualAmbushPredators.png",
+      "category": "Expedition",
+      "detailsId": "carved-cunning"
+    },
+    {
+      "id": "idol-of-alira",
+      "name": "Idol of Alira",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvSWRvbG9BbGlyYSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/e42de4138f/IdoloAlira.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-alira"
+    },
+    {
+      "id": "idol-of-eeshta",
+      "name": "Idol of Eeshta",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bFNwZWNpYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8965465ce6/AzmeriSocketableOwlSpecial.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-eeshta"
+    },
+    {
+      "id": "idol-of-egrin",
+      "name": "Idol of Egrin",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUNhdFNwZWNpYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/16657ca6fc/AzmeriSocketableCatSpecial.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-egrin"
+    },
+    {
+      "id": "idol-of-eramir",
+      "name": "Idol of Eramir",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvSWRvbG9mRXJhbWlyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/16c654b06e/IdolofEramir.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-eramir"
+    },
+    {
+      "id": "idol-of-greust",
+      "name": "Idol of Greust",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvSWRvbG9mR3JldXN0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/04513fa428/IdolofGreust.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-greust"
+    },
+    {
+      "id": "idol-of-maxarius",
+      "name": "Idol of Maxarius",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVN0YWdTcGVjaWFsIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/f012409342/AzmeriSocketableStagSpecial.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-maxarius"
+    },
+    {
+      "id": "idol-of-oak",
+      "name": "Idol of Oak",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvSWRvbG9mT2FrIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/3b899a4269/IdolofOak.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-oak"
+    },
+    {
+      "id": "idol-of-ralakesh",
+      "name": "Idol of Ralakesh",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU1vbmtleVNwZWNpYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8ffc9986a0/AzmeriSocketableMonkeySpecial.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-ralakesh"
+    },
+    {
+      "id": "idol-of-the-martyr",
+      "name": "Idol of the Martyr",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvUml0dWFsQ29ycnVwdGVkSWRvbDIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/3d4b0cf485/RitualCorruptedIdol2.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-the-martyr"
+    },
+    {
+      "id": "idol-of-the-sycophant",
+      "name": "Idol of the Sycophant",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvUml0dWFsQ29ycnVwdGVkSWRvbDEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/cac5e993bc/RitualCorruptedIdol1.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-the-sycophant"
+    },
+    {
+      "id": "idol-of-yeena",
+      "name": "Idol of Yeena",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvSWRvbG9mWWVlbmEiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/f9671c2da7/IdolofYeena.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-yeena"
+    },
+    {
+      "id": "owl-idol",
+      "name": "Owl Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU93bCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/dfe1212549/AzmeriSocketableOwl.png",
+      "category": "Ritual",
+      "detailsId": "owl-idol"
+    },
+    {
+      "id": "primate-idol",
+      "name": "Primate Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU1vbmtleSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/77a4554895/AzmeriSocketableMonkey.png",
+      "category": "Ritual",
+      "detailsId": "primate-idol"
+    },
+    {
+      "id": "stoat-idol",
+      "name": "Stoat Idol",
+      "category": "Ritual",
+      "detailsId": "stoat-idol"
+    },
+    {
+      "id": "stag-idol",
+      "name": "Stag Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVN0YWciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2a0668f95a/AzmeriSocketableStag.png",
+      "category": "Ritual",
+      "detailsId": "stag-idol"
+    },
+    {
+      "id": "fox-idol",
+      "name": "Fox Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUZveCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/9d48a79d56/AzmeriSocketableFox.png",
+      "category": "Ritual",
+      "detailsId": "fox-idol"
+    },
+    {
+      "id": "hawk-idol",
+      "name": "Hawk Idol",
+      "category": "Ritual",
+      "detailsId": "hawk-idol"
+    },
+    {
+      "id": "idol-of-grold",
+      "name": "Idol of Grold",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZUJlYXJTcGVjaWFsIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/363a2de335/AzmeriSocketableBearSpecial.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-grold"
+    },
+    {
+      "id": "idol-of-kraityn",
+      "name": "Idol of Kraityn",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvSWRvbG9LcmFpdHluIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/06571f7a6a/IdoloKraityn.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-kraityn"
+    },
+    {
+      "id": "idol-of-silk",
+      "name": "Idol of Silk",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvSWRvbG9mU2lsayIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/79679b0f2b/IdolofSilk.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-silk"
+    },
+    {
+      "id": "idol-of-sirrius",
+      "name": "Idol of Sirrius",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVdvbGZTcGVjaWFsIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/53db9f9ba3/AzmeriSocketableWolfSpecial.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-sirrius"
+    },
+    {
+      "id": "idol-of-the-pharisee",
+      "name": "Idol of the Pharisee",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvUml0dWFsQ29ycnVwdGVkSWRvbDMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/8555a2a109/RitualCorruptedIdol3.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-the-pharisee"
+    },
+    {
+      "id": "idol-of-thruldana",
+      "name": "Idol of Thruldana",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVNuYWtlU3BlY2lhbCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/f44ebc01aa/AzmeriSocketableSnakeSpecial.png",
+      "category": "Ritual",
+      "detailsId": "idol-of-thruldana"
+    },
+    {
+      "id": "ox-idol",
+      "name": "Ox Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZU94Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5ebdb092f5/AzmeriSocketableOx.png",
+      "category": "Ritual",
+      "detailsId": "ox-idol"
+    },
+    {
+      "id": "panther-idol",
+      "name": "Panther Idol",
+      "category": "Ritual",
+      "detailsId": "panther-idol"
+    },
+    {
+      "id": "rabbit-idol",
+      "name": "Rabbit Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVJhYmJpdCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/d578d6d700/AzmeriSocketableRabbit.png",
+      "category": "Ritual",
+      "detailsId": "rabbit-idol"
+    },
+    {
+      "id": "snake-idol",
+      "name": "Snake Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVNuYWtlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/752d762312/AzmeriSocketableSnake.png",
+      "category": "Ritual",
+      "detailsId": "snake-idol"
+    },
+    {
+      "id": "wolf-idol",
+      "name": "Wolf Idol",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVG9ybWVudGVkU3Bpcml0U29ja2V0YWJsZXMvQXptZXJpU29ja2V0YWJsZVdvbGYiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c0deeb6d94/AzmeriSocketableWolf.png",
+      "category": "Ritual",
+      "detailsId": "wolf-idol"
+    }
+  ]
+}
