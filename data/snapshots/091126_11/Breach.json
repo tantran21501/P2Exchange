@@ -1,0 +1,765 @@
+{
+  "core": {
+    "items": [
+      {
+        "id": "divine",
+        "name": "Divine Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "category": "Currency",
+        "detailsId": "divine-orb"
+      },
+      {
+        "id": "exalted",
+        "name": "Exalted Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+        "category": "Currency",
+        "detailsId": "exalted-orb"
+      },
+      {
+        "id": "chaos",
+        "name": "Chaos Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "category": "Currency",
+        "detailsId": "chaos-orb"
+      }
+    ],
+    "rates": {
+      "exalted": 645.6,
+      "chaos": 9.79
+    },
+    "primary": "divine",
+    "secondary": "chaos"
+  },
+  "lines": [
+    {
+      "id": "adaptive-catalyst",
+      "primaryValue": 0.02,
+      "volumePrimaryValue": 3.5,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 50,
+      "sparkline": {
+        "totalChange": 84.0,
+        "data": [
+          -17.96,
+          -41.35,
+          -26.62,
+          -12.7,
+          -8.4,
+          -25.7,
+          84.0
+        ]
+      }
+    },
+    {
+      "id": "breach-splinter",
+      "primaryValue": 0.009035,
+      "volumePrimaryValue": 21.07,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 11.3,
+      "sparkline": {
+        "totalChange": 2.36,
+        "data": [
+          1.65,
+          0.73,
+          8.93,
+          11.71,
+          17.7,
+          11.23,
+          2.36
+        ]
+      }
+    },
+    {
+      "id": "breachstone",
+      "primaryValue": 3.84,
+      "volumePrimaryValue": 280.8,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.2605,
+      "sparkline": {
+        "totalChange": 4.91,
+        "data": [
+          -3.63,
+          -3.1,
+          -2.12,
+          0.06,
+          0.18,
+          2.68,
+          4.91
+        ]
+      }
+    },
+    {
+      "id": "carapace-catalyst",
+      "primaryValue": 0.008362,
+      "volumePrimaryValue": 2.48,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 12.21,
+      "sparkline": {
+        "totalChange": 30.87,
+        "data": [
+          5.64,
+          -8.45,
+          11.76,
+          76.12,
+          23.24,
+          50.06,
+          30.87
+        ]
+      }
+    },
+    {
+      "id": "eshs-catalyst",
+      "primaryValue": 0.04915,
+      "volumePrimaryValue": 10.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 20.34,
+      "sparkline": {
+        "totalChange": 30.63,
+        "data": [
+          1.37,
+          2.68,
+          27.55,
+          -0.47,
+          -3.3,
+          -4.57,
+          30.63
+        ]
+      }
+    },
+    {
+      "id": "flesh-catalyst",
+      "primaryValue": 0.008062,
+      "volumePrimaryValue": 1.17,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 12.67,
+      "sparkline": {
+        "totalChange": 24.75,
+        "data": [
+          -8.06,
+          -22.25,
+          -18.87,
+          -17.27,
+          -21.28,
+          -6.88,
+          24.75
+        ]
+      }
+    },
+    {
+      "id": "necrotic-catalyst",
+      "primaryValue": 0.01219,
+      "volumePrimaryValue": 3.23,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 8.38,
+      "sparkline": {
+        "totalChange": -22.88,
+        "data": [
+          1.72,
+          57.03,
+          4.85,
+          46.74,
+          27.89,
+          29.58,
+          -22.88
+        ]
+      }
+    },
+    {
+      "id": "reaver-catalyst",
+      "primaryValue": 0.3396,
+      "volumePrimaryValue": 105.2,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.94,
+      "sparkline": {
+        "totalChange": -14.28,
+        "data": [
+          4.24,
+          -10.1,
+          -21.7,
+          -20.41,
+          -28.32,
+          -2.88,
+          -14.28
+        ]
+      }
+    },
+    {
+      "id": "refined-carapace-catalyst",
+      "primaryValue": 0.4464,
+      "volumePrimaryValue": 54.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.24,
+      "sparkline": {
+        "totalChange": 31.54,
+        "data": [
+          100.4,
+          58.57,
+          35.15,
+          17.53,
+          17.59,
+          78.44,
+          31.54
+        ]
+      }
+    },
+    {
+      "id": "refined-chayulas-catalyst",
+      "primaryValue": 0.2651,
+      "volumePrimaryValue": 4.6,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.3852,
+      "sparkline": {
+        "totalChange": -11.07,
+        "data": [
+          -2.16,
+          -3.55,
+          14.88,
+          -1.29,
+          -1.65,
+          2.93,
+          -11.07
+        ]
+      }
+    },
+    {
+      "id": "refined-necrotic-catalyst",
+      "primaryValue": 0.894,
+      "volumePrimaryValue": 54.83,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1.12,
+      "sparkline": {
+        "totalChange": -24.51,
+        "data": [
+          -15.0,
+          -43.69,
+          -46.35,
+          -34.75,
+          -39.39,
+          24.93,
+          -24.51
+        ]
+      }
+    },
+    {
+      "id": "refined-skittering-catalyst",
+      "primaryValue": 0.8431,
+      "volumePrimaryValue": 14.33,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1.19,
+      "sparkline": {
+        "totalChange": 119.4,
+        "data": [
+          9.79,
+          4.43,
+          51.54,
+          10.14,
+          22.9,
+          11.8,
+          119.4
+        ]
+      }
+    },
+    {
+      "id": "refined-tuls-catalyst",
+      "primaryValue": 0.34,
+      "volumePrimaryValue": 14.79,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.3003,
+      "sparkline": {
+        "totalChange": 23.95,
+        "data": [
+          10.71,
+          23.26,
+          18.94,
+          31.9,
+          26.56,
+          29.83,
+          23.95
+        ]
+      }
+    },
+    {
+      "id": "sibilant-catalyst",
+      "primaryValue": 0.7032,
+      "volumePrimaryValue": 469.5,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1.42,
+      "sparkline": {
+        "totalChange": 11.84,
+        "data": [
+          -23.09,
+          -32.49,
+          -40.24,
+          -35.39,
+          -34.11,
+          -11.19,
+          11.84
+        ]
+      }
+    },
+    {
+      "id": "uul-netols-catalyst",
+      "primaryValue": 0.01045,
+      "volumePrimaryValue": 1.57,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 9.77,
+      "sparkline": {
+        "totalChange": 107.2,
+        "data": [
+          7.24,
+          3.28,
+          68.72,
+          170.1,
+          75.23,
+          118.0,
+          107.2
+        ]
+      }
+    },
+    {
+      "id": "xophs-catalyst",
+      "primaryValue": 0.05487,
+      "volumePrimaryValue": 14.0,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 18.23,
+      "sparkline": {
+        "totalChange": 88.01,
+        "data": [
+          22.53,
+          3.04,
+          17.22,
+          -8.13,
+          -4.05,
+          74.7,
+          88.01
+        ]
+      }
+    },
+    {
+      "id": "chayulas-catalyst",
+      "primaryValue": 0.01757,
+      "volumePrimaryValue": 1.67,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 56.9,
+      "sparkline": {
+        "totalChange": 2.54,
+        "data": [
+          -17.33,
+          -12.51,
+          -24.63,
+          41.64,
+          6.82,
+          1.88,
+          2.54
+        ]
+      }
+    },
+    {
+      "id": "neural-catalyst",
+      "primaryValue": 0.01151,
+      "volumePrimaryValue": 4.5,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 86.85,
+      "sparkline": {
+        "totalChange": -20.42,
+        "data": [
+          -5.7,
+          -19.01,
+          -23.83,
+          -36.19,
+          -26.73,
+          -22.85,
+          -20.42
+        ]
+      }
+    },
+    {
+      "id": "refined-adaptive-catalyst",
+      "primaryValue": 0.3308,
+      "volumePrimaryValue": 50.83,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 3.02,
+      "sparkline": {
+        "totalChange": 14.59,
+        "data": [
+          11.77,
+          14.03,
+          13.3,
+          7.7,
+          18.19,
+          41.89,
+          14.59
+        ]
+      }
+    },
+    {
+      "id": "refined-eshs-catalyst",
+      "primaryValue": 0.3841,
+      "volumePrimaryValue": 80.67,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.6,
+      "sparkline": {
+        "totalChange": 11.8,
+        "data": [
+          -1.4,
+          16.83,
+          8.76,
+          0.04,
+          18.64,
+          110.1,
+          11.8
+        ]
+      }
+    },
+    {
+      "id": "refined-flesh-catalyst",
+      "primaryValue": 0.3762,
+      "volumePrimaryValue": 29.53,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.2715,
+      "sparkline": {
+        "totalChange": 21.98,
+        "data": [
+          1.58,
+          5.04,
+          7.76,
+          4.31,
+          4.88,
+          9.16,
+          21.98
+        ]
+      }
+    },
+    {
+      "id": "refined-neural-catalyst",
+      "primaryValue": 0.3832,
+      "volumePrimaryValue": 35.83,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.61,
+      "sparkline": {
+        "totalChange": 21.88,
+        "data": [
+          3.54,
+          7.03,
+          11.26,
+          -1.68,
+          5.77,
+          28.89,
+          21.88
+        ]
+      }
+    },
+    {
+      "id": "refined-reaver-catalyst",
+      "primaryValue": 6.17,
+      "volumePrimaryValue": 606.0,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.162,
+      "sparkline": {
+        "totalChange": -15.9,
+        "data": [
+          -3.82,
+          -5.96,
+          -12.72,
+          -18.28,
+          -16.39,
+          -13.43,
+          -15.9
+        ]
+      }
+    },
+    {
+      "id": "refined-sibilant-catalyst",
+      "primaryValue": 14.64,
+      "volumePrimaryValue": 1462,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.06831,
+      "sparkline": {
+        "totalChange": 2.02,
+        "data": [
+          -0.74,
+          -2.63,
+          -1.57,
+          -1.31,
+          12.84,
+          9.05,
+          2.02
+        ]
+      }
+    },
+    {
+      "id": "refined-uul-netols-catalyst",
+      "primaryValue": 0.3131,
+      "volumePrimaryValue": 6.37,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.3262,
+      "sparkline": {
+        "totalChange": 2.09,
+        "data": [
+          -0.33,
+          -4.3,
+          -8.63,
+          -7.25,
+          -6.97,
+          1.33,
+          2.09
+        ]
+      }
+    },
+    {
+      "id": "refined-xophs-catalyst",
+      "primaryValue": 0.3744,
+      "volumePrimaryValue": 13.67,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 2.67,
+      "sparkline": {
+        "totalChange": -29.45,
+        "data": [
+          -36.53,
+          -28.42,
+          -30.99,
+          -37.29,
+          -22.27,
+          45.67,
+          -29.45
+        ]
+      }
+    },
+    {
+      "id": "skittering-catalyst",
+      "primaryValue": 0.2698,
+      "volumePrimaryValue": 25.0,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 3.71,
+      "sparkline": {
+        "totalChange": -2.99,
+        "data": [
+          -19.66,
+          -36.45,
+          -45.87,
+          -29.32,
+          -5.92,
+          22.65,
+          -2.99
+        ]
+      }
+    },
+    {
+      "id": "tuls-catalyst",
+      "primaryValue": 0.02202,
+      "volumePrimaryValue": 7.78,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 4.64,
+      "sparkline": {
+        "totalChange": -0.46,
+        "data": [
+          -26.06,
+          -11.79,
+          43.76,
+          21.08,
+          -30.38,
+          -22.55,
+          -0.46
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "adaptive-catalyst",
+      "name": "Adaptive Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0QXR0cmlidXRlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/015f6c9ac8/BreachCatalystAttribute.png",
+      "category": "Breach",
+      "detailsId": "adaptive-catalyst"
+    },
+    {
+      "id": "breach-splinter",
+      "name": "Breach Splinter",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaHN0b25lU3BsaW50ZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/4abb17ea8e/BreachstoneSplinter.png",
+      "category": "Breach",
+      "detailsId": "breach-splinter"
+    },
+    {
+      "id": "breachstone",
+      "name": "Breachstone",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaHN0b25lIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d60587d724/Breachstone.png",
+      "category": "Breach",
+      "detailsId": "breachstone"
+    },
+    {
+      "id": "carapace-catalyst",
+      "name": "Carapace Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0RGVmZW5jZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/568ca70b04/BreachCatalystDefences.png",
+      "category": "Breach",
+      "detailsId": "carapace-catalyst"
+    },
+    {
+      "id": "eshs-catalyst",
+      "name": "Esh's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TGlnaHRuaW5nIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/299e62fc33/BreachCatalystLightning.png",
+      "category": "Breach",
+      "detailsId": "eshs-catalyst"
+    },
+    {
+      "id": "flesh-catalyst",
+      "name": "Flesh Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TGlmZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/06ec489870/BreachCatalystLife.png",
+      "category": "Breach",
+      "detailsId": "flesh-catalyst"
+    },
+    {
+      "id": "necrotic-catalyst",
+      "name": "Necrotic Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TmVjcm90aWMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/5e20b43820/BreachCatalystNecrotic.png",
+      "category": "Breach",
+      "detailsId": "necrotic-catalyst"
+    },
+    {
+      "id": "reaver-catalyst",
+      "name": "Reaver Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0QXR0YWNrIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/ccc363f502/BreachCatalystAttack.png",
+      "category": "Breach",
+      "detailsId": "reaver-catalyst"
+    },
+    {
+      "id": "refined-carapace-catalyst",
+      "name": "Refined Carapace Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3REZWZlbmNlcyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/a4d02de8e3/JewelCatalystDefences.png",
+      "category": "Breach",
+      "detailsId": "refined-carapace-catalyst"
+    },
+    {
+      "id": "refined-chayulas-catalyst",
+      "name": "Refined Chayula's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RDaGFvcyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/162124aa67/JewelCatalystChaos.png",
+      "category": "Breach",
+      "detailsId": "refined-chayulas-catalyst"
+    },
+    {
+      "id": "refined-necrotic-catalyst",
+      "name": "Refined Necrotic Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3ROZWNyb3RpYyIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/4e691d8472/JewelCatalystNecrotic.png",
+      "category": "Breach",
+      "detailsId": "refined-necrotic-catalyst"
+    },
+    {
+      "id": "refined-skittering-catalyst",
+      "name": "Refined Skittering Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RTcGVlZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/680cbc13b1/JewelCatalystSpeed.png",
+      "category": "Breach",
+      "detailsId": "refined-skittering-catalyst"
+    },
+    {
+      "id": "refined-tuls-catalyst",
+      "name": "Refined Tul's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RDb2xkIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/1b256097c6/JewelCatalystCold.png",
+      "category": "Breach",
+      "detailsId": "refined-tuls-catalyst"
+    },
+    {
+      "id": "sibilant-catalyst",
+      "name": "Sibilant Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q2FzdGVyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/51dc6bc317/BreachCatalystCaster.png",
+      "category": "Breach",
+      "detailsId": "sibilant-catalyst"
+    },
+    {
+      "id": "uul-netols-catalyst",
+      "name": "Uul-Netol's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0UGh5c2ljYWwiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/bc9406c106/BreachCatalystPhysical.png",
+      "category": "Breach",
+      "detailsId": "uul-netols-catalyst"
+    },
+    {
+      "id": "xophs-catalyst",
+      "name": "Xoph's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0RmlyZSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/05b1999374/BreachCatalystFire.png",
+      "category": "Breach",
+      "detailsId": "xophs-catalyst"
+    },
+    {
+      "id": "chayulas-catalyst",
+      "name": "Chayula's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q2hhb3MiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/c80d8d7b1b/BreachCatalystChaos.png",
+      "category": "Breach",
+      "detailsId": "chayulas-catalyst"
+    },
+    {
+      "id": "neural-catalyst",
+      "name": "Neural Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0TWFuYSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/61d3a7a832/BreachCatalystMana.png",
+      "category": "Breach",
+      "detailsId": "neural-catalyst"
+    },
+    {
+      "id": "refined-adaptive-catalyst",
+      "name": "Refined Adaptive Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RBdHRyaWJ1dGUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/6fba81f1c7/JewelCatalystAttribute.png",
+      "category": "Breach",
+      "detailsId": "refined-adaptive-catalyst"
+    },
+    {
+      "id": "refined-eshs-catalyst",
+      "name": "Refined Esh's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RMaWdodG5pbmciLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/55ca761293/JewelCatalystLightning.png",
+      "category": "Breach",
+      "detailsId": "refined-eshs-catalyst"
+    },
+    {
+      "id": "refined-flesh-catalyst",
+      "name": "Refined Flesh Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RMaWZlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/b210729498/JewelCatalystLife.png",
+      "category": "Breach",
+      "detailsId": "refined-flesh-catalyst"
+    },
+    {
+      "id": "refined-neural-catalyst",
+      "name": "Refined Neural Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RNYW5hIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/141d460ed9/JewelCatalystMana.png",
+      "category": "Breach",
+      "detailsId": "refined-neural-catalyst"
+    },
+    {
+      "id": "refined-reaver-catalyst",
+      "name": "Refined Reaver Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RBdHRhY2siLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/9c13494ea8/JewelCatalystAttack.png",
+      "category": "Breach",
+      "detailsId": "refined-reaver-catalyst"
+    },
+    {
+      "id": "refined-sibilant-catalyst",
+      "name": "Refined Sibilant Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RDYXN0ZXIiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/280306d9e0/JewelCatalystCaster.png",
+      "category": "Breach",
+      "detailsId": "refined-sibilant-catalyst"
+    },
+    {
+      "id": "refined-uul-netols-catalyst",
+      "name": "Refined Uul-Netol's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RQaHlzaWNhbCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/af62c7f7d8/JewelCatalystPhysical.png",
+      "category": "Breach",
+      "detailsId": "refined-uul-netols-catalyst"
+    },
+    {
+      "id": "refined-xophs-catalyst",
+      "name": "Refined Xoph's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0pld2VsQ2F0YWx5c3RGaXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/d584c5922b/JewelCatalystFire.png",
+      "category": "Breach",
+      "detailsId": "refined-xophs-catalyst"
+    },
+    {
+      "id": "skittering-catalyst",
+      "name": "Skittering Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0U3BlZWQiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/14b5db3c3c/BreachCatalystSpeed.png",
+      "category": "Breach",
+      "detailsId": "skittering-catalyst"
+    },
+    {
+      "id": "tuls-catalyst",
+      "name": "Tul's Catalyst",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQnJlYWNoL0JyZWFjaENhdGFseXN0Q29sZCIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/c3bc9abf43/BreachCatalystCold.png",
+      "category": "Breach",
+      "detailsId": "tuls-catalyst"
+    }
+  ]
+}
