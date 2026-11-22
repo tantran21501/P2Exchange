@@ -1,0 +1,531 @@
+{
+  "core": {
+    "items": [
+      {
+        "id": "divine",
+        "name": "Divine Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/2986e220b3/CurrencyModValues.png",
+        "category": "Currency",
+        "detailsId": "divine-orb"
+      },
+      {
+        "id": "exalted",
+        "name": "Exalted Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lBZGRNb2RUb1JhcmUiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/ad7c366789/CurrencyAddModToRare.png",
+        "category": "Currency",
+        "detailsId": "exalted-orb"
+      },
+      {
+        "id": "chaos",
+        "name": "Chaos Orb",
+        "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/c0ca392a78/CurrencyRerollRare.png",
+        "category": "Currency",
+        "detailsId": "chaos-orb"
+      }
+    ],
+    "rates": {
+      "exalted": 454.8,
+      "chaos": 11.62
+    },
+    "primary": "divine",
+    "secondary": "chaos"
+  },
+  "lines": [
+    {
+      "id": "adaptive-alloy",
+      "primaryValue": 1,
+      "volumePrimaryValue": 3.33,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1,
+      "sparkline": {
+        "totalChange": 0,
+        "data": [
+          -5.56,
+          0,
+          0,
+          null,
+          -20.0,
+          -11.64,
+          0
+        ]
+      }
+    },
+    {
+      "id": "celestial-alloy",
+      "primaryValue": 1.13,
+      "volumePrimaryValue": 6.4,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.07623,
+      "sparkline": {
+        "totalChange": -29.17,
+        "data": [
+          -19.06,
+          -29.79,
+          -38.58,
+          -32.27,
+          -15.58,
+          -31.81,
+          -29.17
+        ]
+      }
+    },
+    {
+      "id": "expansive-alloy",
+      "primaryValue": 0.2778,
+      "volumePrimaryValue": 1.67,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 3.6,
+      "sparkline": {
+        "totalChange": -16.67,
+        "data": [
+          30.09,
+          5.0,
+          19.6,
+          52.41,
+          -2.56,
+          49.51,
+          -16.67
+        ]
+      }
+    },
+    {
+      "id": "liquid-verisium",
+      "primaryValue": 0.1096,
+      "volumePrimaryValue": 250.8,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 9.13,
+      "sparkline": {
+        "totalChange": 35.8,
+        "data": [
+          7.56,
+          24.79,
+          31.08,
+          45.04,
+          31.13,
+          23.71,
+          35.8
+        ]
+      }
+    },
+    {
+      "id": "runic-alloy",
+      "primaryValue": 0.06431,
+      "volumePrimaryValue": 0.1715,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.03419,
+      "sparkline": {
+        "totalChange": -21.8,
+        "data": [
+          -12.18,
+          -4.91,
+          -2.83,
+          -10.79,
+          -6.96,
+          -21.37,
+          -21.8
+        ]
+      }
+    },
+    {
+      "id": "sovereign-alloy",
+      "primaryValue": 0.2947,
+      "volumePrimaryValue": 4.67,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 3.39,
+      "sparkline": {
+        "totalChange": -65.67,
+        "data": [
+          -40.05,
+          -57.63,
+          -53.73,
+          -53.08,
+          -58.9,
+          -59.78,
+          -65.67
+        ]
+      }
+    },
+    {
+      "id": "swift-alloy",
+      "primaryValue": 0.08608,
+      "volumePrimaryValue": 0.2296,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 1,
+      "sparkline": {
+        "totalChange": 225.6,
+        "data": [
+          -10.4,
+          93.15,
+          494.9,
+          468.0,
+          2032,
+          811.6,
+          225.6
+        ]
+      }
+    },
+    {
+      "id": "transcendent-alloy",
+      "primaryValue": 0.578,
+      "volumePrimaryValue": 2.7,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.1489,
+      "sparkline": {
+        "totalChange": 91.39,
+        "data": [
+          21.62,
+          53.32,
+          56.28,
+          36.55,
+          104.8,
+          68.3,
+          91.39
+        ]
+      }
+    },
+    {
+      "id": "verisium",
+      "primaryValue": 7.058e-05,
+      "volumePrimaryValue": 16.67,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 14169,
+      "sparkline": {
+        "totalChange": -26.75,
+        "data": [
+          -12.83,
+          -10.16,
+          8.1,
+          19.76,
+          27.17,
+          23.55,
+          -26.75
+        ]
+      }
+    },
+    {
+      "id": "cyclonic-alloy",
+      "primaryValue": 0.04304,
+      "volumePrimaryValue": 0.1004,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 2,
+      "sparkline": {
+        "totalChange": -92.12,
+        "data": [
+          -64.47,
+          -47.7,
+          -89.03,
+          -60.85,
+          -65.35,
+          -92.33,
+          -92.12
+        ]
+      }
+    },
+    {
+      "id": "exceptional-verisium",
+      "primaryValue": 0.01337,
+      "volumePrimaryValue": 2.5,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 74.8,
+      "sparkline": {
+        "totalChange": 0.1,
+        "data": [
+          -31.81,
+          -15.34,
+          68.13,
+          111.8,
+          187.0,
+          134.1,
+          0.1
+        ]
+      }
+    },
+    {
+      "id": "medveds-crest-of-the-circle",
+      "primaryValue": 0.003748,
+      "volumePrimaryValue": 0.06559,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.5866,
+      "sparkline": {
+        "totalChange": 298.4,
+        "data": [
+          12.26,
+          158.3,
+          121.5,
+          585.2,
+          917.9,
+          1128,
+          298.4
+        ]
+      }
+    },
+    {
+      "id": "mystic-alloy",
+      "primaryValue": 0.1227,
+      "volumePrimaryValue": 2.6,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 0.7017,
+      "sparkline": {
+        "totalChange": -85.75,
+        "data": [
+          -63.47,
+          -83.45,
+          -76.01,
+          -56.43,
+          -53.03,
+          -67.42,
+          -85.75
+        ]
+      }
+    },
+    {
+      "id": "olroths-crest-of-the-sun",
+      "primaryValue": 0.3182,
+      "volumePrimaryValue": 1.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 3.14,
+      "sparkline": {
+        "totalChange": 66.67,
+        "data": [
+          -1.06,
+          36.97,
+          47.52,
+          -1.92,
+          60.18,
+          52.78,
+          66.67
+        ]
+      }
+    },
+    {
+      "id": "prismatic-alloy",
+      "primaryValue": 0.004524,
+      "volumePrimaryValue": 0.03921,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.486,
+      "sparkline": {
+        "totalChange": 3.67,
+        "data": [
+          62.78,
+          69.7,
+          125.6,
+          238.6,
+          -34.51,
+          -8.41,
+          3.67
+        ]
+      }
+    },
+    {
+      "id": "the-runebinders-alloy",
+      "primaryValue": 3.19,
+      "volumePrimaryValue": 11.17,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 0.3134,
+      "sparkline": {
+        "totalChange": 184.6,
+        "data": [
+          51.26,
+          -30.18,
+          56.51,
+          69.69,
+          51.65,
+          95.2,
+          184.6
+        ]
+      }
+    },
+    {
+      "id": "uhtreds-crest-of-the-chalice",
+      "primaryValue": 0.09547,
+      "volumePrimaryValue": 0.3023,
+      "maxVolumeCurrency": "exalted",
+      "maxVolumeRate": 0.02303,
+      "sparkline": {
+        "totalChange": 30.04,
+        "data": [
+          -41.68,
+          -38.2,
+          -33.56,
+          -7.66,
+          -18.39,
+          -66.69,
+          30.04
+        ]
+      }
+    },
+    {
+      "id": "voranas-crest-of-the-scythe",
+      "primaryValue": 0.02152,
+      "volumePrimaryValue": 0.05739,
+      "maxVolumeCurrency": "chaos",
+      "maxVolumeRate": 4,
+      "sparkline": {
+        "totalChange": 0,
+        "data": [
+          -1.54,
+          -8.69,
+          -14.48,
+          -17.46,
+          -15.07,
+          -4.39,
+          0
+        ]
+      }
+    },
+    {
+      "id": "warding-starlit-ore",
+      "primaryValue": 1,
+      "volumePrimaryValue": 0.3333,
+      "maxVolumeCurrency": "divine",
+      "maxVolumeRate": 1,
+      "sparkline": {
+        "totalChange": -62.96,
+        "data": [
+          0,
+          60.49,
+          11.11,
+          -25.93,
+          -55.56,
+          -30.04,
+          -62.96
+        ]
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "adaptive-alloy",
+      "name": "Adaptive Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQ2hpcHBlZFZlcmlzaXVtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/5795b74448/ChippedVerisium.png",
+      "category": "Verisium",
+      "detailsId": "adaptive-alloy"
+    },
+    {
+      "id": "celestial-alloy",
+      "name": "Celestial Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQWxsb3k0Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/df21374115/Alloy4.png",
+      "category": "Verisium",
+      "detailsId": "celestial-alloy"
+    },
+    {
+      "id": "expansive-alloy",
+      "name": "Expansive Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU3RhbmRhcmRWZXJpc2l1bSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/4ee9afb77c/StandardVerisium.png",
+      "category": "Verisium",
+      "detailsId": "expansive-alloy"
+    },
+    {
+      "id": "liquid-verisium",
+      "name": "Liquid Verisium",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvTGlxdWlkTWV0YWxWZXJpc2l1bSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/af9a074e38/LiquidMetalVerisium.png",
+      "category": "Verisium",
+      "detailsId": "liquid-verisium"
+    },
+    {
+      "id": "runic-alloy",
+      "name": "Runic Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU2NyYXBWZXJpc2l1bSIsInNjYWxlIjoxLCJyZWFsbSI6InBvZTIifV0/a16ffa5970/ScrapVerisium.png",
+      "category": "Verisium",
+      "detailsId": "runic-alloy"
+    },
+    {
+      "id": "sovereign-alloy",
+      "name": "Sovereign Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQWxsb3kxIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/34231c4ea8/Alloy1.png",
+      "category": "Verisium",
+      "detailsId": "sovereign-alloy"
+    },
+    {
+      "id": "swift-alloy",
+      "name": "Swift Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvUHVyZVZlcmlzaXVtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/8418cd5cc3/PureVerisium.png",
+      "category": "Verisium",
+      "detailsId": "swift-alloy"
+    },
+    {
+      "id": "transcendent-alloy",
+      "name": "Transcendent Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQWxsb3k1Iiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/4ffca7b84e/Alloy5.png",
+      "category": "Verisium",
+      "detailsId": "transcendent-alloy"
+    },
+    {
+      "id": "verisium",
+      "name": "Verisium",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvUmVmaW5lZFZlcmlzaXVtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/35616acb9f/RefinedVerisium.png",
+      "category": "Verisium",
+      "detailsId": "verisium"
+    },
+    {
+      "id": "cyclonic-alloy",
+      "name": "Cyclonic Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvSW1idWVkVmVyaXNpdW0iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/083dc3c30d/ImbuedVerisium.png",
+      "category": "Verisium",
+      "detailsId": "cyclonic-alloy"
+    },
+    {
+      "id": "exceptional-verisium",
+      "name": "Exceptional Verisium",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvUGVyZmVjdFZlcmlzaXVtIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/fce9475fdb/PerfectVerisium.png",
+      "category": "Verisium",
+      "detailsId": "exceptional-verisium"
+    },
+    {
+      "id": "medveds-crest-of-the-circle",
+      "name": "Medved's Crest of the Circle",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvVWh0cmVkQ3Jlc3QiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/273a9b8731/UhtredCrest.png",
+      "category": "Verisium",
+      "detailsId": "medveds-crest-of-the-circle"
+    },
+    {
+      "id": "mystic-alloy",
+      "name": "Mystic Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQ2VsZXN0aWFsVmVyaXNpdW0iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/1478b03254/CelestialVerisium.png",
+      "category": "Verisium",
+      "detailsId": "mystic-alloy"
+    },
+    {
+      "id": "olroths-crest-of-the-sun",
+      "name": "Olroth's Crest of the Sun",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvT2xyb3RoQ3Jlc3QiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/7af5ff0fcb/OlrothCrest.png",
+      "category": "Verisium",
+      "detailsId": "olroths-crest-of-the-sun"
+    },
+    {
+      "id": "prismatic-alloy",
+      "name": "Prismatic Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvU292ZXJlaWduVmVyaXNpdW0iLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/3565edc5d4/SovereignVerisium.png",
+      "category": "Verisium",
+      "detailsId": "prismatic-alloy"
+    },
+    {
+      "id": "the-runebinders-alloy",
+      "name": "The Runebinder's Alloy",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvQWxsb3kyIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/e0ba7ace00/Alloy2.png",
+      "category": "Verisium",
+      "detailsId": "the-runebinders-alloy"
+    },
+    {
+      "id": "uhtreds-crest-of-the-chalice",
+      "name": "Uhtred's Crest of the Chalice",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvTWVkdmVkQ3Jlc3QiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/75a8fb110a/MedvedCrest.png",
+      "category": "Verisium",
+      "detailsId": "uhtreds-crest-of-the-chalice"
+    },
+    {
+      "id": "voranas-crest-of-the-scythe",
+      "name": "Vorana's Crest of the Scythe",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRXhwZWRpdGlvbjIvVm9yYW5hQ3Jlc3QiLCJzY2FsZSI6MSwicmVhbG0iOiJwb2UyIn1d/af46d3f422/VoranaCrest.png",
+      "category": "Verisium",
+      "detailsId": "voranas-crest-of-the-scythe"
+    },
+    {
+      "id": "warding-starlit-ore",
+      "name": "Warding Starlit Ore",
+      "image": "/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3JhZnRpbmcvVmVyaXNpdW0vVmVyaXNpdW1PcmVfU3RhcmxpdF8yeDRfV2VhcG9uIiwic2NhbGUiOjEsInJlYWxtIjoicG9lMiJ9XQ/0bb113db28/VerisiumOre_Starlit_2x4_Weapon.png",
+      "category": "Verisium",
+      "detailsId": "warding-starlit-ore"
+    }
+  ]
+}
